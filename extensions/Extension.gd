@@ -12,3 +12,6 @@ func handle_drop(character: Player):
 func handle_pickup(character: Player):
 	# Handle setup of any effects
 	pass
+	
+func get_name():
+	return "GenericExtension"
