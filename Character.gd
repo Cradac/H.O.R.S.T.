@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 @export var MAX_SPEED = 200
 @export var ACCELERATION = 300
+@export var AIR_BREAK = 100
 @export var FRICTION = 500
 @export var JUMP_FORCE = 250 
 @export var GRAVITY = 500
@@ -10,6 +11,7 @@ class_name Player extends CharacterBody2D
 
 var extensions: Array[Extension]
 var prev_x = 1
+var normal_jump = true
 
 func _process(delta):
 	# action inputs
@@ -35,11 +37,20 @@ func move(delta):
 			_animated_sprite.play("idle")
 	else:
 		if sign(x) == sign(prev_x):
-			if abs(velocity.x) <= MAX_SPEED:
+			if is_on_floor():
 				velocity.x += x * ACCELERATION * delta
+			else:
+				if abs(velocity.x) > (ACCELERATION - AIR_BREAK) * delta:
+					velocity.x += (x * (ACCELERATION - AIR_BREAK) * delta) # - (x * AIR_BREAK * delta)
 		else:
 			velocity.x = velocity.x / 2
-			velocity.x = x * ACCELERATION * delta
+			if is_on_floor():
+				velocity.x = x * ACCELERATION * delta
+			else:
+				if abs(velocity.x) > (ACCELERATION - AIR_BREAK) * delta:
+					velocity.x = x * (ACCELERATION - AIR_BREAK) * delta
+		if abs(velocity.x) > MAX_SPEED:
+			velocity.x = MAX_SPEED * sign(velocity.x)
 		_animated_sprite.play("walk")
 		if x > 0:
 			_animated_sprite.set_flip_h(false)
@@ -48,11 +59,9 @@ func move(delta):
 
 		
 	velocity.y += GRAVITY * delta
-	if Input.is_action_just_pressed("jump") and may_i_jump():
+	if Input.is_action_just_pressed("jump") and may_i_jump() and normal_jump:
 		jump(JUMP_FORCE)
-
-	print(velocity)
-	get_node("speed").text = str(velocity.x) + "" + str(velocity.y)
+	get_node("speed").text = str( round(velocity.x) ) + " | " + str( round(velocity.y))
 	move_and_slide()
 	prev_x = x
 
@@ -64,6 +73,7 @@ func apply_friction(ammount):
 		
 
 func jump(force):
+	velocity.y = 0
 	velocity.y -= force
 	_animated_sprite.play("jump")
 
