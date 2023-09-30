@@ -6,11 +6,15 @@ extends CharacterBody2D
 @export var JUMP_FORCE = 600 
 @export var GRAVITY = 500
 
-@onready var axis = Vector2.ZERO
+var prev_x = 0
+
+func _process(delta):
+	# action inputs
+	action()
 
 func _physics_process(delta):
 	move(delta)
-	action()
+
 
 func move(delta):
 	var x  = 0
@@ -20,20 +24,32 @@ func move(delta):
 	if x == 0:
 		if is_on_floor():
 			apply_friction(FRICTION * delta)
+			pass
 	else:
-		velocity.x += x * ACCELERATION * delta
+		if sign(x) == sign(prev_x):
+			velocity.x += x * ACCELERATION * delta
+		else:
+			velocity.x = x * ACCELERATION * delta
+		
 	if !is_on_floor():
 		velocity.y += GRAVITY * delta
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and may_i_jump():
 		velocity.y -=  JUMP_FORCE
 		
+	velocity.limit_length(MAX_SPEED)
 	move_and_slide()
+	prev_x = x
 
 func apply_friction(ammount):
 	if velocity.length() > ammount:
 		velocity -= velocity.normalized() * ammount
 	else:
 		velocity = Vector2.ZERO
+		
+		
+func may_i_jump():
+	#this is a place for doublejump logic and other funky jumpy stuff
+	return is_on_floor()
 
 func action():
 	if Input.is_action_pressed("action"):
