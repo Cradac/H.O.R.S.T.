@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var FRICTION = 500
 @export var JUMP_FORCE = 600 
 @export var GRAVITY = 500
+@onready var _animated_sprite = $AnimatedSprite2D
 
 var prev_x = 0
 
@@ -24,17 +25,23 @@ func move(delta):
 	if x == 0:
 		if is_on_floor():
 			apply_friction(FRICTION * delta)
-			pass
+			_animated_sprite.play("idle")
 	else:
 		if sign(x) == sign(prev_x):
 			velocity.x += x * ACCELERATION * delta
 		else:
 			velocity.x = x * ACCELERATION * delta
+		_animated_sprite.play("walk")
+		if x > 0:
+			_animated_sprite.set_flip_h(false)
+		if x < 0:
+			_animated_sprite.set_flip_h(true)
+
 		
-	if !is_on_floor():
-		velocity.y += GRAVITY * delta
+	velocity.y += GRAVITY * delta
 	if Input.is_action_just_pressed("jump") and may_i_jump():
 		velocity.y -=  JUMP_FORCE
+		_animated_sprite.play("jump")
 		
 	velocity.limit_length(MAX_SPEED)
 	move_and_slide()
