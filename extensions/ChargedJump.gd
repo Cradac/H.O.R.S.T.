@@ -3,6 +3,7 @@ class_name ChargedJump extends Extension
 var started_charging
 @export var charge_jump_force = 350.0 
 @export var charge_duration = 1000.0
+@export var name = "ChargedJump"
 
 
 func handle_pickup(character: Player):
@@ -26,3 +27,6 @@ func handle_action(character: Player, delta):
 		
 func handle_drop(character: Player):
 	character.normal_jump = true
+	
+func get_name():
+	return name

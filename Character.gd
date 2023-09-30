@@ -17,6 +17,8 @@ var in_jump = false
 
 var queued_velocity: Vector2
 
+signal inventory_change(extensions: Array[Extension])
+
 func _process(delta):
 	# action inputs
 	action()
@@ -106,16 +108,34 @@ func may_i_jump():
 
 func action():
 	if Input.is_action_just_pressed("action"):
-		equip(ChargedJump.new())
-		#quip(DoubleJump.new())
+		#equip(ChargedJump.new())
+		equip(DoubleJump.new())
 		get_node("Label").visible = true
 	else:
 		get_node("Label").visible = false
 		
+	if Input.is_action_just_pressed("drop_first"):
+		drop(0)
+	if Input.is_action_just_pressed("drop_second"):
+		drop(1)
+		
 func equip(extension: Extension):
+	if (extensions.size() >= ram_size):
+		push_warning("Missing ram to pick up "+str(extension))
+		# TODO Add Warning Message to UI
+		return
+	
 	extension.handle_pickup(self)
 	extensions.push_back(extension)
 	
-func drop(slot_index):
-	extensions[slot_index].handle_drop(self)
-	extensions.remove_at(slot_index)
+	inventory_change.emit(extensions)
+	
+func drop(slot_index: int):
+	print("Dropping "+str(slot_index) + " - " + str(extensions.size()))
+	if slot_index >= extensions.size():
+		return
+	else:
+		extensions[slot_index].handle_drop(self)
+		extensions.remove_at(slot_index)
+		
+		inventory_change.emit(extensions)
