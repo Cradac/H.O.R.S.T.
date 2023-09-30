@@ -9,10 +9,6 @@ radius = 11.0
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_chlop")
-MAX_SPEED = 50
-ACCELERATION = 10
-JUMP_FORCE = 100
-GRAVITY = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
@@ -36,3 +32,9 @@ offset_top = -30.0
 offset_right = 191.0
 offset_bottom = 4.0
 text = "Beep Boop :D"
+
+[node name="speed" type="Label" parent="."]
+offset_left = -17.0
+offset_top = -40.0
+offset_right = 23.0
+offset_bottom = -17.0
