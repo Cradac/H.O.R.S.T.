@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var GRAVITY = 500
 @onready var _animated_sprite = $AnimatedSprite2D
 
-var prev_x = 0
+var prev_x = 1
 
 func _process(delta):
 	# action inputs
@@ -27,9 +27,14 @@ func move(delta):
 			apply_friction(FRICTION * delta)
 			_animated_sprite.play("idle")
 	else:
+		#velocity.x += x * ACCELERATION * delta
 		if sign(x) == sign(prev_x):
+			print("same dir")
 			velocity.x += x * ACCELERATION * delta
+			
 		else:
+			print("dir change")
+			velocity.x = velocity.x / 2
 			velocity.x = x * ACCELERATION * delta
 		_animated_sprite.play("walk")
 		if x > 0:
@@ -43,7 +48,8 @@ func move(delta):
 		velocity.y -=  JUMP_FORCE
 		_animated_sprite.play("jump")
 		
-	velocity.limit_length(MAX_SPEED)
+	velocity = velocity.limit_length(MAX_SPEED)
+	print(velocity)
 	move_and_slide()
 	prev_x = x
 

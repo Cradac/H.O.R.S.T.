@@ -1,31 +1,25 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckshqcuxm8ism"]
+[gd_scene load_steps=3 format=3 uid="uid://ckshqcuxm8ism"]
 
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="1_2cpjx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2y06m"]
-size = Vector2(1139.5, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_lt3uu"]
-size = Vector2(92.5, 90)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_d1wpv"]
-size = Vector2(413, 25)
+size = Vector2(2913.38, 31)
 
 [node name="basicScene" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_2cpjx")]
 position = Vector2(332, 235)
-MAX_SPEED = 600
-ACCELERATION = 300
+MAX_SPEED = 150
+ACCELERATION = 100
 FRICTION = 1500
 JUMP_FORCE = 1000
-GRAVITY = 5000
+GRAVITY = 100
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(333, 494)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(243, 123)
+position = Vector2(1134.31, 120)
 shape = SubResource("RectangleShape2D_2y06m")
 debug_color = Color(0.878431, 0.345098, 0, 1)
 
@@ -37,19 +31,3 @@ offset_bottom = 116.0
 text = "a/d -> left right
 space -> jump
 f -> action"
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
-position = Vector2(290, 15)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(802.75, 560)
-shape = SubResource("RectangleShape2D_lt3uu")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
-position = Vector2(390, -321)
-rotation = 0.363703
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
-position = Vector2(1179, 623)
-rotation = 0.448407
-shape = SubResource("RectangleShape2D_d1wpv")
