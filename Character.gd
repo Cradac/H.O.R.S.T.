@@ -15,13 +15,16 @@ var prev_x = 1
 var normal_jump = true
 var in_jump = false
 
+var queued_velocity: Vector2
+
 func _process(delta):
 	# action inputs
 	action()
-	for extension in extensions:
-		extension.handle_action(self, delta)
+	
 
 func _physics_process(delta):
+	for extension in extensions:
+		extension.handle_action(self, delta)
 	move(delta)
 	
 
@@ -64,14 +67,21 @@ func move(delta):
 		velocity.y += GRAVITY * delta # normal gravity
 		
 	#reset jump state
+		
+	if Input.is_action_just_pressed("jump") and may_i_jump() and normal_jump:
+		queue_jump(JUMP_FORCE)
+		
+	
+	# Apply velocity queued by Extensions
+	velocity = velocity + queued_velocity
+	
+	queued_velocity = Vector2(0,0)
+	
+	get_node("speed").text = str( round(velocity.x) ) + " | " + str( round(velocity.y))
+	move_and_slide()
 	if is_on_floor() and in_jump:
 		print("reset jump")
 		in_jump = false
-		
-	if Input.is_action_just_pressed("jump") and may_i_jump() and normal_jump:
-		jump(JUMP_FORCE)
-	get_node("speed").text = str( round(velocity.x) ) + " | " + str( round(velocity.y))
-	move_and_slide()
 	prev_x = x
 
 func apply_friction(ammount):
@@ -81,11 +91,11 @@ func apply_friction(ammount):
 		velocity = Vector2.ZERO
 		
 
-func jump(force):
+func queue_jump(force):
 	print("JUMP!!")
 	in_jump = true
-	velocity.y = 0
-	velocity.y -= force
+	queued_velocity.y = 0
+	queued_velocity.y -= force
 	_animated_sprite.play("jump")
 
 func may_i_jump():
@@ -95,8 +105,9 @@ func may_i_jump():
 	return false
 
 func action():
-	if Input.is_action_pressed("action"):
-		equip(DoubleJump.new())
+	if Input.is_action_just_pressed("action"):
+		equip(ChargedJump.new())
+		#quip(DoubleJump.new())
 		get_node("Label").visible = true
 	else:
 		get_node("Label").visible = false
