@@ -13,7 +13,7 @@ func handle_action(character: Player, delta):
 		var time_charged = Time.get_ticks_msec() - started_charging
 		var boost = min((time_charged/charge_duration)*charge_jump_force, charge_jump_force)
 		print(str(time_charged) + " " + str(boost))
-		character.jump(character.JUMP_FORCE + boost)
+		character.queue_jump(character.JUMP_FORCE + boost)
 	
 	
 	if Input.is_action_just_pressed("jump") && character.is_on_floor():
