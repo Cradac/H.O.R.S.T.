@@ -29,12 +29,11 @@ shape = SubResource("RectangleShape2D_lt3uu")
 
 [node name="Character" parent="." instance=ExtResource("1_2cpjx")]
 position = Vector2(332, 235)
-MAX_SPEED = 600
+MAX_SPEED = 200
 ACCELERATION = 300
 FRICTION = 1500
-JUMP_FORCE = 1000
-GRAVITY = 5000
-ram_size = 1
+JUMP_FORCE = 250
+GRAVITY = 500
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(333, 494)
