@@ -9,6 +9,10 @@ radius = 11.0
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_chlop")
+MAX_SPEED = 50
+ACCELERATION = 10
+JUMP_FORCE = 100
+GRAVITY = 100
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false

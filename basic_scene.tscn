@@ -3,11 +3,14 @@
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="1_2cpjx"]
 [ext_resource type="Texture2D" uid="uid://b1nnmvjxx1lh8" path="res://material/Robot Platform Pack/OnlyTiles.png" id="2_pscx0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y06m"]
-size = Vector2(1139.5, 20)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_63qaf"]
+size = Vector2(20, 570)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt3uu"]
 size = Vector2(92.5, 90)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y06m"]
+size = Vector2(1139.5, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d1wpv"]
 size = Vector2(413, 25)
@@ -413,13 +416,24 @@ pattern_4 = SubResource("TileMapPattern_rbvmu")
 
 [node name="basicScene" type="Node2D"]
 
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(333, 494)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(-311, -203)
+shape = SubResource("RectangleShape2D_63qaf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(802.75, 560)
+shape = SubResource("RectangleShape2D_lt3uu")
+
 [node name="Character" parent="." instance=ExtResource("1_2cpjx")]
 position = Vector2(332, 235)
-MAX_SPEED = 600
+MAX_SPEED = 200
 ACCELERATION = 300
 FRICTION = 1500
-JUMP_FORCE = 1000
-GRAVITY = 5000
+JUMP_FORCE = 250
+GRAVITY = 500
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 visible = false
