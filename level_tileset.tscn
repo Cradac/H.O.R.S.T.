@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwt466c0p2qyj"]
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_y2rcy"]
+tile_data = PackedInt32Array(0, 196609, 0, 65536, 196609, 1, 1, 262145, 0, 65537, 262145, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_gpnbi"]
+tile_data = PackedInt32Array(0, 327681, 0, 65536, 327681, 1, 1, 393217, 0, 65537, 393217, 1)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_1heow"]
+tile_data = PackedInt32Array(0, 1, 0, 65536, 1, 1, 131072, 1, 2, 1, 65537, 0, 65537, 65537, 1, 131073, 65537, 2, 2, 131073, 0, 65538, 131073, 1, 131074, 131073, 2)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_s2bnv"]
+tile_data = PackedInt32Array(0, 327681, 4, 65536, 327681, 5, 1, 393217, 4, 65537, 393217, 5)
+
+[sub_resource type="TileMapPattern" id="TileMapPattern_rbvmu"]
+tile_data = PackedInt32Array(0, 262145, 2, 1, 327681, 2)
+
+[sub_resource type="TileSet" id="TileSet_mxlfv"]
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+terrain_set_0/terrain_0/name = "Wall"
+terrain_set_0/terrain_0/color = Color(0.501961, 0.345098, 0.25098, 1)
+terrain_set_0/terrain_1/name = "Platform"
+terrain_set_0/terrain_1/color = Color(0.501961, 0.439216, 1, 1)
+terrain_set_0/terrain_2/name = "Obstacle"
+terrain_set_0/terrain_2/color = Color(1, 0.501961, 0.25098, 1)
+pattern_0 = SubResource("TileMapPattern_y2rcy")
+pattern_1 = SubResource("TileMapPattern_gpnbi")
+pattern_2 = SubResource("TileMapPattern_1heow")
+pattern_3 = SubResource("TileMapPattern_s2bnv")
+pattern_4 = SubResource("TileMapPattern_rbvmu")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_mxlfv")
+format = 2
+layer_0/name = "Background"
+layer_0/z_index = -1
+layer_1/name = "Foreground"
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
