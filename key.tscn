@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://d0i64nj3yq5v3"]
+
+[ext_resource type="Texture2D" uid="uid://ffeeay1eebgb" path="res://material/Robot Platform Pack/key.png" id="1_aw6vy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5r2qq"]
+radius = 6.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wy2bk"]
+atlas = ExtResource("1_aw6vy")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gx42"]
+atlas = ExtResource("1_aw6vy")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_87d4w"]
+atlas = ExtResource("1_aw6vy")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7rn8"]
+atlas = ExtResource("1_aw6vy")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g580f"]
+atlas = ExtResource("1_aw6vy")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vt6m8"]
+atlas = ExtResource("1_aw6vy")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12lgv"]
+atlas = ExtResource("1_aw6vy")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xil5r"]
+atlas = ExtResource("1_aw6vy")
+region = Rect2(48, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6kx1x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wy2bk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gx42")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_87d4w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7rn8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g580f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vt6m8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12lgv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xil5r")
+}],
+"loop": true,
+"name": &"spinning",
+"speed": 5.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("CircleShape2D_5r2qq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_6kx1x")
+animation = &"spinning"
+autoplay = "spinning"
