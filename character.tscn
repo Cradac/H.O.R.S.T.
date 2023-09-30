@@ -1,19 +1,28 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkxa5ykfmobjr"]
+[gd_scene load_steps=5 format=3 uid="uid://dkxa5ykfmobjr"]
 
 [ext_resource type="Script" path="res://Character.gd" id="1_chlop"]
 [ext_resource type="Texture2D" uid="uid://cw3fdsegxijyb" path="res://icon.svg" id="2_v0lyj"]
+[ext_resource type="SpriteFrames" uid="uid://dp6krf5n1obcv" path="res://character-spriteframes.tres" id="3_ipixp"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_8an13"]
-radius = 60.208
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lyxyb"]
+radius = 11.0
 
 [node name="Character" type="CharacterBody2D"]
 script = ExtResource("1_chlop")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("2_v0lyj")
 
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -3)
+sprite_frames = ExtResource("3_ipixp")
+animation = &"walk"
+frame_progress = 0.776749
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_8an13")
+position = Vector2(-1, -2)
+shape = SubResource("CapsuleShape2D_lyxyb")
 debug_color = Color(0.992157, 0, 0.266667, 0.419608)
 
 [node name="Label" type="Label" parent="."]
