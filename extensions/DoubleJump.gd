@@ -1,4 +1,4 @@
-extends Extension
+class_name DoubleJump extends Extension
 
 var used_jump = false
 var last_on_floor = Time.get_ticks_msec()

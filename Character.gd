@@ -25,8 +25,6 @@ func _physics_process(delta):
 
 @onready var axis = Vector2.ZERO
 
-const DoubleJump = preload("res://extensions/DoubleJump.gd")
-
 func move(delta):
 	var x  = 0
 	x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
@@ -83,7 +81,15 @@ func may_i_jump():
 
 func action():
 	if Input.is_action_pressed("action"):
-		extensions.push_back(DoubleJump.new())
+		equip(ChargedJump.new())
 		get_node("Label").visible = true
 	else:
 		get_node("Label").visible = false
+		
+func equip(extension: Extension):
+	extension.handle_pickup(self)
+	extensions.push_back(extension)
+	
+func drop(slot_index):
+	extensions[slot_index].handle_drop(self)
+	extensions.remove_at(slot_index)

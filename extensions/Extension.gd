@@ -5,6 +5,10 @@ class_name Extension
 func handle_action(character: Player, delta):
 	pass
 	
-func handle_drop():
+func handle_drop(character: Player):
 	# Handle cleanup of any lingering effects
+	pass
+	
+func handle_pickup(character: Player):
+	# Handle setup of any effects
 	pass
