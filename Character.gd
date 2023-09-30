@@ -38,15 +38,13 @@ func move(delta):
 			if is_on_floor():
 				velocity.x += x * ACCELERATION * delta
 			else:
-				if abs(velocity.x) > (ACCELERATION - AIR_BREAK) * delta:
-					velocity.x += (x * (ACCELERATION - AIR_BREAK) * delta) # - (x * AIR_BREAK * delta)
+				velocity.x += (x * (ACCELERATION/2) * delta) # - (x * AIR_BREAK * delta)
 		else:
 			velocity.x = velocity.x / 2
 			if is_on_floor():
 				velocity.x = x * ACCELERATION * delta
 			else:
-				if abs(velocity.x) > (ACCELERATION - AIR_BREAK) * delta:
-					velocity.x = x * (ACCELERATION - AIR_BREAK) * delta
+				velocity.x = x * (ACCELERATION /2) * delta
 		if abs(velocity.x) > MAX_SPEED:
 			velocity.x = MAX_SPEED * sign(velocity.x)
 		_animated_sprite.play("walk")
