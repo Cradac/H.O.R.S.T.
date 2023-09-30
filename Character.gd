@@ -1,10 +1,11 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 @export var MAX_SPEED = 500
 @export var ACCELERATION = 500
 @export var FRICTION = 500
 @export var JUMP_FORCE = 600 
 @export var GRAVITY = 500
+
 @onready var _animated_sprite = $AnimatedSprite2D
 
 var prev_x = 0
@@ -12,10 +13,20 @@ var prev_x = 0
 func _process(delta):
 	# action inputs
 	action()
+	for extension in extensions:
+		extension.handle_action(self, delta)
 
 func _physics_process(delta):
 	move(delta)
+	
 
+@export var ram_size = 1
+var extensions: Array[Extension]
+
+
+@onready var axis = Vector2.ZERO
+
+const DoubleJump = preload("res://extensions/DoubleJump.gd")
 
 func move(delta):
 	var x  = 0
@@ -60,6 +71,7 @@ func may_i_jump():
 
 func action():
 	if Input.is_action_pressed("action"):
+		extensions.push_back(DoubleJump.new())
 		get_node("Label").visible = true
 	else:
 		get_node("Label").visible = false
