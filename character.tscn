@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dkxa5ykfmobjr"]
+
+[ext_resource type="Script" path="res://Character.gd" id="1_chlop"]
+[ext_resource type="Texture2D" uid="uid://cw3fdsegxijyb" path="res://icon.svg" id="2_v0lyj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8an13"]
+radius = 60.208
+
+[node name="Character" type="CharacterBody2D"]
+script = ExtResource("1_chlop")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v0lyj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8an13")
+debug_color = Color(0.992157, 0, 0.266667, 0.419608)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_left = 63.0
+offset_top = -30.0
+offset_right = 191.0
+offset_bottom = 4.0
+text = "Beep Boop :D"

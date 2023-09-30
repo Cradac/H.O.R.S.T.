@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckshqcuxm8ism"]
+
+[ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="1_2cpjx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2y06m"]
+size = Vector2(1139.5, 20)
+
+[node name="basicScene" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("1_2cpjx")]
+position = Vector2(332, 235)
+MAX_SPEED = 600
+ACCELERATION = 300
+FRICTION = 1000
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(333, 494)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(247.25, 92)
+shape = SubResource("RectangleShape2D_2y06m")
+debug_color = Color(0.878431, 0.345098, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 99.0
+offset_top = 18.0
+offset_right = 561.0
+offset_bottom = 116.0
+text = "a/d -> left right
+space -> jump
+f -> action"
