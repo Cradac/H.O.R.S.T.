@@ -9,6 +9,7 @@ size = Vector2(2082, 20)
 
 [node name="Character" parent="." instance=ExtResource("1_yssot")]
 position = Vector2(361, 317)
+AIR_BREAK = 350
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 

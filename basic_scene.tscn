@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://ckshqcuxm8ism"]
+[gd_scene load_steps=13 format=3 uid="uid://ckshqcuxm8ism"]
 
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="1_2cpjx"]
 [ext_resource type="Texture2D" uid="uid://b1nnmvjxx1lh8" path="res://material/Robot Platform Pack/OnlyTiles.png" id="2_pscx0"]
@@ -414,7 +414,7 @@ pattern_6 = SubResource("TileMapPattern_vj3us")
 
 [node name="Character" parent="." instance=ExtResource("1_2cpjx")]
 position = Vector2(59, 166)
-FRICTION = 1500
+AIR_BREAK = 250
 
 [node name="Label" type="Label" parent="."]
 offset_left = 249.0
