@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://bofm3yx34nxu"]
+
+[ext_resource type="Script" path="res://button.gd" id="1_ajrjq"]
+[ext_resource type="Texture2D" uid="uid://dc5trtgcw36hy" path="res://material/Robot Platform Pack/button_inactive.png" id="1_bfs41"]
+[ext_resource type="Texture2D" uid="uid://cis0ctsxknjuj" path="res://material/Robot Platform Pack/button_active.png" id="2_7dgqq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wkyp"]
+size = Vector2(12, 6)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_ajrjq")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_4wkyp")
+
+[node name="inactive" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("1_bfs41")
+
+[node name="active" type="Sprite2D" parent="StaticBody2D"]
+texture = ExtResource("2_7dgqq")
