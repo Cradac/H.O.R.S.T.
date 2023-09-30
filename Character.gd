@@ -6,12 +6,14 @@ class_name Player extends CharacterBody2D
 @export var FRICTION = 500
 @export var JUMP_FORCE = 250 
 @export var GRAVITY = 500
+@export var POST_JUMP_GRAVITY = 500
 @export var ram_size = 1
 @onready var _animated_sprite = $AnimatedSprite2D
 
 var extensions: Array[Extension]
 var prev_x = 1
 var normal_jump = true
+var in_jump = false
 
 func _process(delta):
 	# action inputs
@@ -38,7 +40,7 @@ func move(delta):
 			if is_on_floor():
 				velocity.x += x * ACCELERATION * delta
 			else:
-				velocity.x += (x * (ACCELERATION/2) * delta) # - (x * AIR_BREAK * delta)
+				velocity.x += (x * (ACCELERATION/2) * delta) 
 		else:
 			velocity.x = velocity.x / 2
 			if is_on_floor():
@@ -47,14 +49,25 @@ func move(delta):
 				velocity.x = x * (ACCELERATION /2) * delta
 		if abs(velocity.x) > MAX_SPEED:
 			velocity.x = MAX_SPEED * sign(velocity.x)
+		# Animations
 		_animated_sprite.play("walk")
 		if x > 0:
 			_animated_sprite.set_flip_h(false)
 		if x < 0:
 			_animated_sprite.set_flip_h(true)
-
+	#print("in_jump" + str(in_jump))
+	if in_jump and sign(velocity.y) == 1:
+		#print("post jump grav")
+		velocity.y += POST_JUMP_GRAVITY * delta #fall faster after jump
+	else:
+		#print("normal grav")
+		velocity.y += GRAVITY * delta # normal gravity
 		
-	velocity.y += GRAVITY * delta
+	#reset jump state
+	if is_on_floor() and in_jump:
+		print("reset jump")
+		in_jump = false
+		
 	if Input.is_action_just_pressed("jump") and may_i_jump() and normal_jump:
 		jump(JUMP_FORCE)
 	get_node("speed").text = str( round(velocity.x) ) + " | " + str( round(velocity.y))
@@ -69,17 +82,21 @@ func apply_friction(ammount):
 		
 
 func jump(force):
+	print("JUMP!!")
+	in_jump = true
 	velocity.y = 0
 	velocity.y -= force
 	_animated_sprite.play("jump")
 
 func may_i_jump():
 	#this is a place for doublejump logic and other funky jumpy stuff
-	return is_on_floor()
+	if is_on_floor():
+		return true
+	return false
 
 func action():
 	if Input.is_action_pressed("action"):
-		equip(ChargedJump.new())
+		equip(DoubleJump.new())
 		get_node("Label").visible = true
 	else:
 		get_node("Label").visible = false
