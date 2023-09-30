@@ -414,7 +414,6 @@ pattern_6 = SubResource("TileMapPattern_vj3us")
 
 [node name="Character" parent="." instance=ExtResource("1_2cpjx")]
 position = Vector2(59, 166)
-FRICTION = 1500
 
 [node name="Label" type="Label" parent="."]
 offset_left = 249.0
