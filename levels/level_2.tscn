@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://yp3ni767j7hn" path="res://interactables/Skillshard.tscn" id="5_o36my"]
 [ext_resource type="PackedScene" uid="uid://c5csxgrchsva" path="res://interactables/door.tscn" id="6_rf1xq"]
 [ext_resource type="PackedScene" uid="uid://0q2mmh6whuom" path="res://interactables/finish_flag.tscn" id="7_4o5ml"]
-[ext_resource type="PackedScene" uid="uid://d0i64nj3yq5v3" path="res://interactables/key.tscn" id="7_tsjie"]
+[ext_resource type="PackedScene" uid="uid://dxknda3nwi188" path="res://interactables/key.tscn" id="7_tsjie"]
 
 [node name="level_2" type="Node2D"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://g56i2id2b14x"]
 
 [ext_resource type="TileSet" uid="uid://deplnjhga82pr" path="res://tile_set.tres" id="1_4wgec"]
-[ext_resource type="PackedScene" uid="uid://be61ckwhkf6ob" path="res://ui/LevelPreview.tscn" id="2_775pq"]
+[ext_resource type="PackedScene" path="res://ui/LevelPreview.tscn" id="2_775pq"]
 [ext_resource type="Texture2D" uid="uid://bk65raiabi748" path="res://ui/level_screenshots/level1.png" id="4_yy34p"]
 [ext_resource type="Texture2D" uid="uid://oiftm20bshfg" path="res://ui/level_screenshots/level2.png" id="6_xu3k5"]
 
@@ -78,3 +78,13 @@ scale = Vector2(0.2, 0.2)
 target_scene = "res://levels/level_2.tscn"
 level_screenshot = ExtResource("6_xu3k5")
 level_number = 2
+
+[node name="LevelPreview3" parent="." instance=ExtResource("2_775pq")]
+offset_left = 671.0
+offset_top = 209.0
+offset_right = 1631.0
+offset_bottom = 749.0
+scale = Vector2(0.2, 0.2)
+target_scene = "res://levels/level_3.tscn"
+level_screenshot = ExtResource("6_xu3k5")
+level_number = 3
