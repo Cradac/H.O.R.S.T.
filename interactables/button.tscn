@@ -1,6 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bofm3yx34nxu"]
+[gd_scene load_steps=5 format=3 uid="uid://bk0ln8ibirnkw"]
 
-[ext_resource type="Script" path="res://interactables/button.gd" id="1_ajrjq"]
+[ext_resource type="Script" path="res://interactables/button.gd" id="1_7slne"]
 [ext_resource type="Texture2D" uid="uid://dc5trtgcw36hy" path="res://material/Robot Platform Pack/button_inactive.png" id="1_bfs41"]
 [ext_resource type="Texture2D" uid="uid://cis0ctsxknjuj" path="res://material/Robot Platform Pack/button_active.png" id="2_7dgqq"]
 
@@ -8,7 +8,7 @@
 size = Vector2(12, 6)
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_ajrjq")
+script = ExtResource("1_7slne")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2

@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://d0i64nj3yq5v3"]
+[gd_scene load_steps=13 format=3 uid="uid://dxknda3nwi188"]
 
+[ext_resource type="Script" path="res://interactables/key.gd" id="1_4qidv"]
 [ext_resource type="Texture2D" uid="uid://ffeeay1eebgb" path="res://material/Robot Platform Pack/key.png" id="1_aw6vy"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5r2qq"]
@@ -69,17 +70,16 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[node name="KeyItem" type="Area2D"]
+script = ExtResource("1_4qidv")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 2
-collision_mask = 2
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5r2qq")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="StaticBody2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -1)
 sprite_frames = SubResource("SpriteFrames_6kx1x")
 animation = &"spinning"
 autoplay = "spinning"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -12,6 +12,7 @@ class_name Player extends CharacterBody2D
 @onready var _animated_sprite = $AnimatedSprite2D
 
 var extensions: Array[Extension]
+var items: Array[Key]
 var prev_x = 1
 var normal_jump = true
 var in_jump = false
@@ -19,7 +20,8 @@ var offset = 0
 
 var queued_velocity: Vector2
 
-signal inventory_change(extensions: Array[Extension])
+signal skill_inventory_change(extensions: Array[Extension])
+signal item_inventory_change(items: Array[Key])
 
 func _process(delta):
 	# action inputs
@@ -137,7 +139,7 @@ func equip(extension: Extension):
 	extension.handle_pickup(self)
 	extensions.push_back(extension)
 	
-	inventory_change.emit(extensions)
+	skill_inventory_change.emit(extensions)
 	
 func drop(slot_index: int):
 	print("Dropping "+str(slot_index) + " - " + str(extensions.size()))
@@ -147,4 +149,14 @@ func drop(slot_index: int):
 		extensions[slot_index].handle_drop(self)
 		extensions.remove_at(slot_index)
 		
-		inventory_change.emit(extensions)
+		skill_inventory_change.emit(extensions)
+
+func pickup(item):
+	items.append(item)
+	item_inventory_change.emit(items)
+	
+func remove_item(item):
+	items.remove_at(items.find(item))
+	item_inventory_change.emit(items)
+	
+
