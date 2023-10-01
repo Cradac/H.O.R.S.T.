@@ -29,9 +29,13 @@ func close_door():
 
 
 func _on_area_2d_body_entered(body):
-	if (body == _static_body_2d) || open:
+	if (body == _static_body_2d) || open || !(body is Player):
 		return
-	for item in (body as Player).items:
+	var player: Player = body as Player
+	for item in player.items:
 		if item == key:
 			open_door()
-			(body as Player).remove_item(item)
+			player.remove_item(item)
+			return
+	player.send_message.emit("Missing correct key", 3)
+	

@@ -7,12 +7,7 @@ var last_dashed = Time.get_ticks_msec()
 @export var name = "Dash"
 
 func handle_drop(character: Player):
-	#spawn item
-	var item = load("res://interactables/Skillshard.tscn").instantiate()
-	item.just_dropped = true
-	item.set_position(character.position + Vector2(0,5))
-	character.get_parent().add_child(item)
-	item.pick_skill(Skill.Skills.DASH)
+	pass
 
 func handle_action(character: Player, delta):
 	if (Input.is_action_just_pressed("action") or Input.is_action_just_pressed("action_2")) && can_use() :
@@ -39,3 +34,6 @@ func get_name():
 
 func get_texture():
 	return load("res://material/Skillshards/Dash-Skillshard16x16.png")
+	
+func get_skill():
+	return Skill.Skills.DASH

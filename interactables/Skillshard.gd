@@ -27,5 +27,5 @@ func pick_skill(new_skill: Skill.Skills):
 
 
 func _on_body_exited(body):
-	just_dropped = false
-	pass # Replace with function body.
+	if (body is Player):
+		just_dropped = false

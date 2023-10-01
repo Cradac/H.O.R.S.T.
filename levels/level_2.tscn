@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://yp3ni767j7hn" path="res://interactables/Skillshard.tscn" id="5_o36my"]
 [ext_resource type="PackedScene" uid="uid://c5csxgrchsva" path="res://interactables/door.tscn" id="6_rf1xq"]
 [ext_resource type="PackedScene" uid="uid://0q2mmh6whuom" path="res://interactables/finish_flag.tscn" id="7_4o5ml"]
-[ext_resource type="PackedScene" uid="uid://d0i64nj3yq5v3" path="res://interactables/key.tscn" id="7_tsjie"]
+[ext_resource type="PackedScene" uid="uid://dxknda3nwi188" path="res://interactables/key.tscn" id="7_tsjie"]
 
 [node name="level_2" type="Node2D"]
 
@@ -34,6 +34,7 @@ layer_2/tile_data = PackedInt32Array()
 position = Vector2(34, 512)
 
 [node name="IngameUI" parent="." instance=ExtResource("3_3vskh")]
+level_name = "Level 2: <limit3d_m3m0ry>"
 
 [node name="DoubleJump" parent="." instance=ExtResource("5_o36my")]
 position = Vector2(71, 512)
@@ -56,4 +57,4 @@ position = Vector2(935, 115)
 
 [node name="finish_flag" parent="." instance=ExtResource("7_4o5ml")]
 position = Vector2(935, 360)
-target_scene = "res://ui/MainMenu.tscn"
+target_scene = "res://levels/level_3.tscn"

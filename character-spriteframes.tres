@@ -101,17 +101,17 @@ region = Rect2(96, 0, 32, 32)
 atlas = ExtResource("6_74ria")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dco00"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjcb1"]
 atlas = ExtResource("7_2r2wc")
-region = Rect2(0, 0, 32, 32)
+region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jjbnc"]
 atlas = ExtResource("7_2r2wc")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bjcb1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dco00"]
 atlas = ExtResource("7_2r2wc")
-region = Rect2(0, 32, 32, 32)
+region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_er0u2"]
 atlas = ExtResource("8_36ulo")
@@ -240,17 +240,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dco00")
+"texture": SubResource("AtlasTexture_bjcb1")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jjbnc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_bjcb1")
+"texture": SubResource("AtlasTexture_dco00")
 }],
-"loop": true,
+"loop": false,
 "name": &"landing",
-"speed": 5.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,

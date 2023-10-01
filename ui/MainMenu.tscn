@@ -78,3 +78,13 @@ scale = Vector2(0.2, 0.2)
 target_scene = "res://levels/level_2.tscn"
 level_screenshot = ExtResource("6_xu3k5")
 level_number = 2
+
+[node name="LevelPreview3" parent="." instance=ExtResource("2_775pq")]
+offset_left = 671.0
+offset_top = 209.0
+offset_right = 1631.0
+offset_bottom = 749.0
+scale = Vector2(0.2, 0.2)
+target_scene = "res://levels/level_3.tscn"
+level_screenshot = ExtResource("6_xu3k5")
+level_number = 3

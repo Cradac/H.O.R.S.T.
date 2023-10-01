@@ -3,13 +3,21 @@ extends Control
 @onready var skill_inventory = $SkillInventoryUI
 @onready var item_inventory = $ItemInventoryUI
 @onready var player: Player = $"../Character"
+@onready var label: Label = $"Message"
+@onready var timer: Timer = $"Message/Timer"
+@onready var name_label = $"LevelName"
+
+@export var level_name: String = "Level X: <b3st13v31>"
+
 
 
 func _ready():
 	player.skill_inventory_change.connect(_on_skill_inventory_change)
 	player.item_inventory_change.connect(_on_item_inventory_change)
+	player.send_message.connect(_on_message)
 	setup_empty_skills()
-	pass
+	name_label.text = level_name
+	
 
 
 func _on_skill_inventory_change(extensions: Array[Extension]):
@@ -48,3 +56,12 @@ func _on_item_inventory_change(items):
 func clear_item_inventory():
 	for child in item_inventory.get_children():
 		item_inventory.remove_child(child) 
+		
+
+func _on_message(message: String, duration: int):
+	label.text = message
+	timer.start(duration)
+	
+	
+func _on_timer_timeout():
+	label.text = ""
