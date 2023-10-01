@@ -21,6 +21,7 @@ var in_jump = false
 var offset = 0
 var queued_vel = false
 var queued_velocity: Vector2
+var on_wall = false
 
 signal skill_inventory_change(extensions: Array[Extension])
 signal item_inventory_change(items: Array[Key])
@@ -166,4 +167,25 @@ func remove_item(item):
 	items.erase(item)
 	item_inventory_change.emit(items)
 	
+
+
+
+func _on_area_2d_area_entered(area):
+	pass
+
+func _on_area_2d_area_exited(area):
+	pass
+
+func _on_area_2d_body_entered(body):
+	
+	if body != self:
+		on_wall = true
+
+func _on_area_2d_body_exited(body):
+	print("exit")
+	on_wall = false
+
+
+
+
 

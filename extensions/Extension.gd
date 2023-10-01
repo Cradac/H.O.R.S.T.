@@ -29,6 +29,8 @@ static func get_extension(skill: Skill.Skills):
 			return Parachute
 		Skill.Skills.DASH:
 			return Dash
+		Skill.Skills.WallJump:
+			return WallJump
 		_:
 			return Extension
 	pass
