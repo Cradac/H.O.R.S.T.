@@ -17,6 +17,13 @@ func _process(delta):
 func handle_drop(character: Player):
 	character.get_node("BadAsset01").visible = false
 	character.offset = 0
+	
+	# spawn item
+	var item = load("res://interactables/Skillshard.tscn").instantiate()
+	item.just_dropped = true
+	item.set_position(character.position + Vector2(0,5))
+	character.get_parent().add_child(item)
+	item.pick_skill(Skill.Skills.DOUBLE_JUMP)
 
 func handle_action(character: Player, delta):
 	character.get_node("BadAsset01").visible = true

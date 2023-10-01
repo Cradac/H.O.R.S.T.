@@ -8,6 +8,13 @@ var started_charging
 
 func handle_pickup(character: Player):
 	character.normal_jump = false
+	
+	#spawn item
+	var item = load("res://interactables/Skillshard.tscn").instantiate()
+	item.just_dropped = true
+	item.set_position(character.position + Vector2(0,5))
+	character.get_parent().add_child(item)
+	item.pick_skill(Skill.Skills.DOUBLE_JUMP)
 
 func handle_action(character: Player, delta):
 	if Input.is_action_just_released("jump") && character.is_on_floor():
