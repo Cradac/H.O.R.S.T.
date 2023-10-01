@@ -18,3 +18,15 @@ func get_name():
 	
 func get_texture():
 	return load("res://material/Skillshards/empty-Skillshard.png")
+	
+static func get_extension(skill: Skill.Skills):
+	match skill:
+		Skill.Skills.CHARGED_JUMP:
+			return ChargedJump
+		Skill.Skills.DOUBLE_JUMP:
+			return DoubleJump
+		Skill.Skills.PARACHUTE:
+			return Parachute
+		_:
+			return Extension
+	pass

@@ -128,16 +128,17 @@ func action():
 	if Input.is_action_just_pressed("drop_second"):
 		drop(1)
 		
-func equip(extension: Extension):
+func equip(extension: Extension) -> bool:
 	if (extensions.size() >= ram_size):
 		push_warning("Missing ram to pick up "+str(extension))
 		# TODO Add Warning Message to UI
-		return
+		return false
 	
 	extension.handle_pickup(self)
 	extensions.push_back(extension)
 	
 	skill_inventory_change.emit(extensions)
+	return true
 	
 func drop(slot_index: int):
 	print("Dropping "+str(slot_index) + " - " + str(extensions.size()))

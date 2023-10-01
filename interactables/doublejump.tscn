@@ -1,18 +1,29 @@
-[gd_scene load_steps=4 format=3 uid="uid://oyf8gbl0u8k2"]
+[gd_scene load_steps=4 format=3 uid="uid://dt2hv4dm0syvm"]
 
-[ext_resource type="Script" path="res://interactables/doublejumpitem.gd" id="1_i3p83"]
-[ext_resource type="Texture2D" uid="uid://cmtmrcmq85qs2" path="res://material/Skillshards/DoubleJump-Skillshard.png" id="2_tt43s"]
+[ext_resource type="Texture2D" path="res://material/DoubleJump-Skillshard.png" id="1_jn8y2"]
+
+[sub_resource type="GDScript" id="GDScript_jm5ir"]
+script/source = "class_name DoubleJumpItem extends Area2D
+
+var picked_up = false
+
+func _on_body_entered(body):
+	if !picked_up:
+		(body as Player).equip(DoubleJump.new())
+		picked_up = true
+		visible = false
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22g0u"]
 size = Vector2(10, 12)
 
 [node name="DoubleJumpItem" type="Area2D"]
-script = ExtResource("1_i3p83")
+script = SubResource("GDScript_jm5ir")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_22g0u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tt43s")
+texture = ExtResource("1_jn8y2")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
