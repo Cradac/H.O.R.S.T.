@@ -13,8 +13,8 @@ func update_extension():
 func _ready():
 	update_extension()
 
-func _on_body_entered(body):
-	if !picked_up:
+func _on_body_entered(body: Node2D):
+	if !picked_up && body is Player:
 		if (body as Player).equip(extension):
 			picked_up = true
 			visible = false
