@@ -38,11 +38,13 @@ grow_vertical = 1
 position = Vector2(934, 88)
 texture = ExtResource("4_tnb85")
 
-[node name="Door1" parent="." instance=ExtResource("5_nc5yi")]
+[node name="Door1" parent="." node_paths=PackedStringArray("key") instance=ExtResource("5_nc5yi")]
 position = Vector2(288, 496)
+key = NodePath("../Key1")
 
-[node name="Door2" parent="." instance=ExtResource("5_nc5yi")]
+[node name="Door2" parent="." node_paths=PackedStringArray("key") instance=ExtResource("5_nc5yi")]
 position = Vector2(897, 80)
+key = NodePath("../Key2")
 
 [node name="Key1" parent="." instance=ExtResource("6_8f4hl")]
 position = Vector2(586, 469)
