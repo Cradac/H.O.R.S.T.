@@ -17,7 +17,7 @@ var prev_x = 1
 var normal_jump = true
 var in_jump = false
 var offset = 0
-
+var queued_vel = false
 var queued_velocity: Vector2
 
 signal skill_inventory_change(extensions: Array[Extension])
@@ -42,10 +42,12 @@ func move(delta):
 	var x  = 0
 	x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	
-	if x == 0:
+	if x == 0 or abs(velocity.x) > 200:
 		if is_on_floor():
 			apply_friction(FRICTION * delta)
 			_animated_sprite.play("idle")
+		if abs(velocity.x) > 200:
+			_animated_sprite.play("walk")
 	else:
 		if sign(x) == sign(prev_x):
 			if is_on_floor():
@@ -58,6 +60,7 @@ func move(delta):
 				velocity.x = x * ACCELERATION * delta
 			else:
 				velocity.x = x * (ACCELERATION /2) * delta
+		
 		if abs(velocity.x) > MAX_SPEED:
 			velocity.x = MAX_SPEED * sign(velocity.x)
 		# Animations
@@ -67,18 +70,13 @@ func move(delta):
 			_animated_sprite.set_flip_h(false)
 		if x < 0:
 			_animated_sprite.set_flip_h(true)
-	#print("in_jump" + str(in_jump))
-	#if in_jump and sign(velocity.y) == 1:
-		#print("post jump grav")
-	#	velocity.y += POST_JUMP_GRAVITY * delta #fall faster after jump
-	#else:
-	#print("normal grav")
+			
 	if sign(velocity.y) == 1:
 		velocity.y += (DOWN_GRAVITY - offset)* delta # normal gravity falling
 	else:
 		velocity.y += GRAVITY * delta # normal gravity rising
-	#reset jump state
 		
+	#reset jump state
 	if Input.is_action_just_pressed("jump") and may_i_jump() and normal_jump:
 		queue_jump(JUMP_FORCE)
 		
@@ -104,6 +102,10 @@ func apply_friction(ammount):
 	else:
 		velocity = Vector2.ZERO
 		
+
+func queue_move(vec):
+	queued_vel = true
+	queued_velocity = vec
 
 func queue_jump(force):
 	in_jump = true

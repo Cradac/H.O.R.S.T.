@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dbk2p6s2c1m8i" path="res://ui/IngameUI.tscn" id="3_403po"]
 [ext_resource type="Texture2D" uid="uid://clrprtaym4qou" path="res://material/finish-flag.png" id="4_tnb85"]
 [ext_resource type="PackedScene" uid="uid://c5csxgrchsva" path="res://interactables/door.tscn" id="5_nc5yi"]
-[ext_resource type="PackedScene" uid="uid://dxknda3nwi188" path="res://interactables/key.tscn" id="6_8f4hl"]
+[ext_resource type="PackedScene" uid="uid://d0i64nj3yq5v3" path="res://interactables/key.tscn" id="6_8f4hl"]
 [ext_resource type="PackedScene" uid="uid://yp3ni767j7hn" path="res://interactables/Skillshard.tscn" id="8_10kbk"]
 
 [node name="Node2D" type="Node2D"]
