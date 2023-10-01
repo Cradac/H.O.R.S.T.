@@ -156,7 +156,7 @@ func pickup(item):
 	item_inventory_change.emit(items)
 	
 func remove_item(item):
-	items.remove_at(items.find(item))
+	items.erase(item)
 	item_inventory_change.emit(items)
 	
 
