@@ -158,8 +158,9 @@ func drop(slot_index: int):
 	else:
 		send_message.emit("Dropped '"+extensions[slot_index].get_name()+"'.", 3)
 		extensions[slot_index].handle_drop(self)
-		extensions.remove_at(slot_index)
+		extensions[slot_index].spawn_item(self)
 		
+		extensions.remove_at(slot_index)
 		skill_inventory_change.emit(extensions)
 
 func pickup(item):
