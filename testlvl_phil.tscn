@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://2yt4g86ehe3a"]
+[gd_scene load_steps=5 format=3 uid="uid://2yt4g86ehe3a"]
 
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="1_yssot"]
+[ext_resource type="PackedScene" uid="uid://yp3ni767j7hn" path="res://interactables/Skillshard.tscn" id="2_466sv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j77wx"]
 size = Vector2(2082, 20)
@@ -11,7 +12,7 @@ size = Vector2(16.5, 22.5)
 [node name="testlvl_phil" type="Node2D"]
 
 [node name="Character" parent="." instance=ExtResource("1_yssot")]
-position = Vector2(113, 616)
+position = Vector2(112, 277)
 MAX_SPEED = 100
 AIR_BREAK = 350
 
@@ -19,49 +20,53 @@ AIR_BREAK = 350
 position = Vector2(3, 271)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1057, 369)
+position = Vector2(1035, 32)
 shape = SubResource("RectangleShape2D_j77wx")
 
 [node name="wall1" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall1"]
-position = Vector2(136, 619)
+position = Vector2(135, 280)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="wall2_1" type="StaticBody2D" parent="."]
 position = Vector2(37, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2_1"]
-position = Vector2(136, 619)
+position = Vector2(135, 280)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="wall2_2" type="StaticBody2D" parent="."]
 position = Vector2(37, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2_2"]
-position = Vector2(136, 619)
+position = Vector2(135, 280)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="wall3_1" type="StaticBody2D" parent="."]
 position = Vector2(80, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3_1"]
-position = Vector2(136, 619)
+position = Vector2(135, 280)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="wall3_2" type="StaticBody2D" parent="."]
 position = Vector2(80, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3_2"]
-position = Vector2(136, 619)
+position = Vector2(135, 280)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="wall3_3" type="StaticBody2D" parent="."]
 position = Vector2(80, -46)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3_3"]
-position = Vector2(136, 619)
+position = Vector2(135, 280)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="TileMap" type="TileMap" parent="."]
 format = 2
+
+[node name="Skillshard" parent="." instance=ExtResource("2_466sv")]
+position = Vector2(215, 209)
+skill = 4
