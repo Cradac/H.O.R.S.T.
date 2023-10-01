@@ -24,6 +24,7 @@ var queued_velocity: Vector2
 
 signal skill_inventory_change(extensions: Array[Extension])
 signal item_inventory_change(items: Array[Key])
+signal send_message(message: String, duration: int)
 
 func _process(delta):
 	# action inputs
@@ -46,7 +47,8 @@ func move(delta):
 	
 	if x == 0 or abs(velocity.x) > VELOCITY_THRESHOLD:
 		if is_on_floor():
-			var friction = min((abs(velocity.x)/VELOCITY_THRESHOLD)*FRICTION_FACTOR, BASE_FRICTION)
+			var high_friction = (abs(velocity.x)/VELOCITY_THRESHOLD)*FRICTION_FACTOR
+			var friction = max(high_friction, BASE_FRICTION)
 			apply_friction(friction * delta)
 			_animated_sprite.play("idle")
 		if abs(velocity.x) > VELOCITY_THRESHOLD:
@@ -138,7 +140,7 @@ func action():
 		
 func equip(extension: Extension) -> bool:
 	if (extensions.size() >= ram_size):
-		push_warning("Missing ram to pick up "+str(extension))
+		send_message.emit("Missing memory space to pick up '"+extension.get_name()+"'", 3)
 		# TODO Add Warning Message to UI
 		return false
 	
@@ -146,6 +148,7 @@ func equip(extension: Extension) -> bool:
 	extensions.push_back(extension)
 	
 	skill_inventory_change.emit(extensions)
+	send_message.emit("Picked up '"+extension.get_name()+"'", 3)
 	return true
 	
 func drop(slot_index: int):
@@ -153,6 +156,7 @@ func drop(slot_index: int):
 	if slot_index >= extensions.size():
 		return
 	else:
+		send_message.emit("Dropped '"+extensions[slot_index].get_name()+"'", 3)
 		extensions[slot_index].handle_drop(self)
 		extensions.remove_at(slot_index)
 		
@@ -161,9 +165,11 @@ func drop(slot_index: int):
 func pickup(item):
 	items.append(item)
 	item_inventory_change.emit(items)
+	send_message.emit("Picked up 'Key'", 3)
 	
 func remove_item(item):
 	items.erase(item)
 	item_inventory_change.emit(items)
+	send_message.emit("Removed 'Key'", 3)
 	
 
