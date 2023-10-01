@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cy75t3qkfrdcr"
-path="res://.godot/imported/Dash-Skillshard.png-e1ce4daf63b9230b5e7a66ab0b3d1835.ctex"
+path="res://.godot/imported/Dash-Skillshard.png-2ffec4985f1a1b56910114be9fc41ec7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://material/Dash-Skillshard.png"
-dest_files=["res://.godot/imported/Dash-Skillshard.png-e1ce4daf63b9230b5e7a66ab0b3d1835.ctex"]
+source_file="res://material/Skillshards/Dash-Skillshard.png"
+dest_files=["res://.godot/imported/Dash-Skillshard.png-2ffec4985f1a1b56910114be9fc41ec7.ctex"]
 
 [params]
 

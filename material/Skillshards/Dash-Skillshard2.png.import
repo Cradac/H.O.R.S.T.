@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmtmrcmq85qs2"
-path="res://.godot/imported/DoubleJump-Skillshard.png-3cfaa5742e9949b9ed91d07a20853a5a.ctex"
+uid="uid://bskvqstfpj36p"
+path="res://.godot/imported/Dash-Skillshard2.png-a18ff609185601f647d69de598c79695.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://material/DoubleJump-Skillshard.png"
-dest_files=["res://.godot/imported/DoubleJump-Skillshard.png-3cfaa5742e9949b9ed91d07a20853a5a.ctex"]
+source_file="res://material/Skillshards/Dash-Skillshard2.png"
+dest_files=["res://.godot/imported/Dash-Skillshard2.png-a18ff609185601f647d69de598c79695.ctex"]
 
 [params]
 

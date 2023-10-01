@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cjxp1oxc8ed24"]
+[gd_scene load_steps=4 format=3 uid="uid://t4etgljndte2"]
 
 [ext_resource type="Script" path="res://interactables/chargedjumpitem.gd" id="1_rud4c"]
-[ext_resource type="Texture2D" uid="uid://8wawwv5sgddd" path="res://material/ChargedJump-Skillshard.png" id="1_uvf6q"]
+[ext_resource type="Texture2D" uid="uid://8wawwv5sgddd" path="res://material/Skillshards/ChargedJump-Skillshard.png" id="1_uvf6q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcp6q"]
 size = Vector2(10.5, 12)

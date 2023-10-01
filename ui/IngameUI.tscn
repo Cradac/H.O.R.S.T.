@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://ui/IngameUI.gd" id="1_r626d"]
 [ext_resource type="Texture2D" uid="uid://pk2dgjkjg2lt" path="res://material/UI-overlay.png" id="2_x88rb"]
-[ext_resource type="Texture2D" uid="uid://8wawwv5sgddd" path="res://material/ChargedJump-Skillshard.png" id="3_6py34"]
-[ext_resource type="Texture2D" uid="uid://cy75t3qkfrdcr" path="res://material/Dash-Skillshard.png" id="4_qun3l"]
-[ext_resource type="Texture2D" uid="uid://cmtmrcmq85qs2" path="res://material/DoubleJump-Skillshard.png" id="5_8227d"]
-[ext_resource type="Texture2D" uid="uid://bq0nn7xb6toli" path="res://material/empty-Skillshard.png" id="6_4nj8e"]
+[ext_resource type="Texture2D" path="res://material/ChargedJump-Skillshard.png" id="3_6py34"]
+[ext_resource type="Texture2D" path="res://material/Dash-Skillshard.png" id="4_qun3l"]
+[ext_resource type="Texture2D" uid="uid://cmtmrcmq85qs2" path="res://material/Skillshards/DoubleJump-Skillshard.png" id="5_uyegv"]
+[ext_resource type="Texture2D" path="res://material/empty-Skillshard.png" id="6_4nj8e"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_q72ka"]
 animations = [{
@@ -27,7 +27,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_8227d")
+"texture": ExtResource("5_uyegv")
 }],
 "loop": false,
 "name": &"double-jump",

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://clrprtaym4qou" path="res://material/finish-flag.png" id="4_tnb85"]
 [ext_resource type="PackedScene" uid="uid://c5csxgrchsva" path="res://interactables/door.tscn" id="5_nc5yi"]
 [ext_resource type="PackedScene" uid="uid://dxknda3nwi188" path="res://interactables/key.tscn" id="6_8f4hl"]
-[ext_resource type="PackedScene" path="res://interactables/doublejump.tscn" id="7_76j51"]
+[ext_resource type="PackedScene" uid="uid://oyf8gbl0u8k2" path="res://interactables/doublejump.tscn" id="7_76j51"]
 
 [node name="Node2D" type="Node2D"]
 
