@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="1_2cpjx"]
 [ext_resource type="Texture2D" uid="uid://b1nnmvjxx1lh8" path="res://material/Robot Platform Pack/OnlyTiles.png" id="2_pscx0"]
 [ext_resource type="Texture2D" uid="uid://bti4oj5p0ypqg" path="res://material/Robot Platform Pack/pipe.png" id="3_mi602"]
-[ext_resource type="PackedScene" uid="uid://dxknda3nwi188" path="res://interactables/key.tscn" id="3_pecug"]
+[ext_resource type="PackedScene" uid="uid://d0i64nj3yq5v3" path="res://interactables/key.tscn" id="3_pecug"]
 [ext_resource type="PackedScene" uid="uid://butk74u2qdi8i" path="res://interactables/card.tscn" id="4_h286c"]
 [ext_resource type="PackedScene" uid="uid://c5csxgrchsva" path="res://interactables/door.tscn" id="5_pyhew"]
 

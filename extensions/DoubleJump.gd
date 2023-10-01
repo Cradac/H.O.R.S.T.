@@ -6,6 +6,14 @@ var last_on_floor = Time.get_ticks_msec()
 
 @export var name = "DoubleJump"
 
+func handle_drop(character: Player):
+	print("fucvkin drop")
+	var item = load("res://interactables/Skillshard.tscn").instantiate()
+	item.just_dropped = true
+	item.set_position(character.position)
+	character.get_parent().add_child(item)
+	item.pick_skill(Skill.Skills.DOUBLE_JUMP)
+
 func handle_action(character: Player, delta):
 	if !character.is_on_floor():
 		if Input.is_action_just_pressed("jump") && can_use():
