@@ -4,8 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="2_vtyji"]
 [ext_resource type="PackedScene" uid="uid://dbk2p6s2c1m8i" path="res://ui/IngameUI.tscn" id="3_403po"]
 [ext_resource type="Texture2D" uid="uid://clrprtaym4qou" path="res://material/finish-flag.png" id="4_tnb85"]
-[ext_resource type="PackedScene" uid="uid://c5csxgrchsva" path="res://interactables/door.tscn" id="5_nc5yi"]
-[ext_resource type="PackedScene" uid="uid://dxknda3nwi188" path="res://interactables/key.tscn" id="6_8f4hl"]
+[ext_resource type="PackedScene" uid="uid://b34tmi8getgnu" path="res://interactables/door.tscn" id="5_nc5yi"]
+[ext_resource type="PackedScene" uid="uid://d0i64nj3yq5v3" path="res://interactables/key.tscn" id="6_8f4hl"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -38,13 +38,11 @@ grow_vertical = 1
 position = Vector2(934, 88)
 texture = ExtResource("4_tnb85")
 
-[node name="Door1" parent="." node_paths=PackedStringArray("key") instance=ExtResource("5_nc5yi")]
+[node name="Door1" parent="." instance=ExtResource("5_nc5yi")]
 position = Vector2(288, 496)
-key = NodePath("../Key1")
 
-[node name="Door2" parent="." node_paths=PackedStringArray("key") instance=ExtResource("5_nc5yi")]
+[node name="Door2" parent="." instance=ExtResource("5_nc5yi")]
 position = Vector2(897, 80)
-key = NodePath("../Key2")
 
 [node name="Key1" parent="." instance=ExtResource("6_8f4hl")]
 position = Vector2(586, 469)

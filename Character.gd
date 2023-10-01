@@ -6,6 +6,7 @@ class_name Player extends CharacterBody2D
 @export var FRICTION = 500
 @export var JUMP_FORCE = 250 
 @export var GRAVITY = 500
+@export var DOWN_GRAVITY = 500
 @export var POST_JUMP_GRAVITY = 500
 @export var ram_size = 1
 @onready var _animated_sprite = $AnimatedSprite2D
@@ -15,6 +16,7 @@ var items: Array[Key]
 var prev_x = 1
 var normal_jump = true
 var in_jump = false
+var offset = 0
 
 var queued_velocity: Vector2
 
@@ -63,13 +65,15 @@ func move(delta):
 		if x < 0:
 			_animated_sprite.set_flip_h(true)
 	#print("in_jump" + str(in_jump))
-	if in_jump and sign(velocity.y) == 1:
+	#if in_jump and sign(velocity.y) == 1:
 		#print("post jump grav")
-		velocity.y += POST_JUMP_GRAVITY * delta #fall faster after jump
+	#	velocity.y += POST_JUMP_GRAVITY * delta #fall faster after jump
+	#else:
+	#print("normal grav")
+	if sign(velocity.y) == 1:
+		velocity.y += (DOWN_GRAVITY - offset)* delta # normal gravity falling
 	else:
-		#print("normal grav")
-		velocity.y += GRAVITY * delta # normal gravity
-		
+		velocity.y += GRAVITY * delta # normal gravity rising
 	#reset jump state
 		
 	if Input.is_action_just_pressed("jump") and may_i_jump() and normal_jump:
@@ -86,6 +90,10 @@ func move(delta):
 	if is_on_floor() and in_jump:
 		print("reset jump")
 		in_jump = false
+	
+	if is_on_floor() and velocity.y > 100:
+		print("dead")
+	
 	prev_x = x
 
 func apply_friction(ammount):
@@ -111,7 +119,8 @@ func may_i_jump():
 func action():
 	if Input.is_action_just_pressed("action"):
 		#equip(ChargedJump.new())
-		equip(DoubleJump.new())
+		#equip(DoubleJump.new())
+		equip(Parachute.new())
 		get_node("Label").visible = true
 	else:
 		get_node("Label").visible = false
@@ -147,7 +156,7 @@ func pickup(item):
 	item_inventory_change.emit(items)
 	
 func remove_item(item):
-	items.remove_at(items.find(item))
+	items.erase(item)
 	item_inventory_change.emit(items)
 	
 
