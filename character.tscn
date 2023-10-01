@@ -2,15 +2,13 @@
 
 [ext_resource type="Script" path="res://Character.gd" id="1_chlop"]
 [ext_resource type="Texture2D" uid="uid://cw3fdsegxijyb" path="res://icon.svg" id="2_v0lyj"]
-[ext_resource type="SpriteFrames" uid="uid://tcaoq7a50k1g" path="res://character-spriteframes.tres" id="3_ipixp"]
+[ext_resource type="SpriteFrames" uid="uid://dtn4de6b5scun" path="res://character-spriteframes.tres" id="3_ipixp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lyxyb"]
 radius = 7.0
 height = 22.0
 
 [node name="Character" type="CharacterBody2D"]
-collision_layer = 513
-collision_mask = 513
 script = ExtResource("1_chlop")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
