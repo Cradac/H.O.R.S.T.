@@ -35,6 +35,7 @@ layer_2/tile_data = PackedInt32Array(1114161, 2, 0, 1048625, 131074, 2, 1310769,
 position = Vector2(43, 83)
 
 [node name="IngameUI" parent="." instance=ExtResource("3_kra16")]
+level_name = "Level 3: <5p33dy_gonz4l35>"
 
 [node name="Dash-Skillshard" parent="." instance=ExtResource("4_w4dpf")]
 position = Vector2(92, 82)
@@ -46,6 +47,7 @@ skill = 1
 
 [node name="finish-flag" parent="." instance=ExtResource("6_q0a3g")]
 position = Vector2(30, 230)
+target_scene = "res://ui/MainMenu.tscn"
 
 [node name="starting-door" parent="." instance=ExtResource("7_j2omi")]
 position = Vector2(17, 80)
