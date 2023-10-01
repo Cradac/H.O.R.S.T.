@@ -1,7 +1,7 @@
 class_name Player extends CharacterBody2D
 
-@export var MAX_SPEED = 200
-@export var ACCELERATION = 300
+@export var MAX_SPEED = 110
+@export var ACCELERATION = 200
 @export var AIR_BREAK = 100
 @export var FRICTION = 500
 @export var JUMP_FORCE = 250 
@@ -103,9 +103,8 @@ func apply_friction(ammount):
 		
 
 func queue_jump(force):
-	print("JUMP!!")
 	in_jump = true
-	queued_velocity.y = 0
+	queued_velocity.y +=  velocity.y * -1
 	queued_velocity.y -= force
 	_animated_sprite.play("jump")
 

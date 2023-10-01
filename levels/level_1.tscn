@@ -26,6 +26,7 @@ layer_1/tile_data = PackedInt32Array(0, 327681, 3, 65536, 327681, 3, 131072, 327
 position = Vector2(359, 218)
 collision_layer = 513
 collision_mask = 513
+MAX_SPEED = 100
 
 [node name="IngameUI" parent="." instance=ExtResource("3_403po")]
 anchors_preset = 0
