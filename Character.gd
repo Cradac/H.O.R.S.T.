@@ -141,7 +141,6 @@ func action():
 func equip(extension: Extension) -> bool:
 	if (extensions.size() >= ram_size):
 		send_message.emit("Missing memory space to pick up '"+extension.get_name()+"'", 3)
-		# TODO Add Warning Message to UI
 		return false
 	
 	extension.handle_pickup(self)
@@ -158,8 +157,9 @@ func drop(slot_index: int):
 	else:
 		send_message.emit("Dropped '"+extensions[slot_index].get_name()+"'", 3)
 		extensions[slot_index].handle_drop(self)
-		extensions.remove_at(slot_index)
+		extensions[slot_index].spawn_item(self)
 		
+		extensions.remove_at(slot_index)
 		skill_inventory_change.emit(extensions)
 
 func pickup(item):

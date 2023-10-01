@@ -7,12 +7,7 @@ var last_on_floor = Time.get_ticks_msec()
 @export var name = "DoubleJump"
 
 func handle_drop(character: Player):
-	#spawn item
-	var item = load("res://interactables/Skillshard.tscn").instantiate()
-	item.just_dropped = true
-	item.set_position(character.position + Vector2(0,5))
-	character.get_parent().add_child(item)
-	item.pick_skill(Skill.Skills.DOUBLE_JUMP)
+	pass
 
 func handle_action(character: Player, delta):
 	if !character.is_on_floor():
@@ -33,3 +28,6 @@ func get_name():
 
 func get_texture():
 	return load("res://material/Skillshards/DoubleJump-Skillshard16x16.png")
+
+func get_skill():
+	return Skill.Skills.DOUBLE_JUMP

@@ -9,6 +9,13 @@ func handle_drop(character: Player):
 	# Handle cleanup of any lingering effects
 	pass
 	
+func spawn_item(character: Player):
+	var item = load("res://interactables/Skillshard.tscn").instantiate()
+	item.just_dropped = true
+	item.set_position(character.position + Vector2(0,5))
+	character.get_parent().add_child(item)
+	item.pick_skill(get_skill())
+	
 func handle_pickup(character: Player):
 	# Handle setup of any effects
 	pass
@@ -32,3 +39,6 @@ static func get_extension(skill: Skill.Skills):
 		_:
 			return Extension
 	pass
+
+func get_skill():
+	return Skill.Skills.OTHER
