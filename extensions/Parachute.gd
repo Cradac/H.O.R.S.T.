@@ -2,6 +2,7 @@ class_name Parachute extends Extension
 
 @export var name = "Parachute"
 @export var gravity = 50
+@export var texture: Texture2D
 var orig_gravity 
 
 # Called when the node enters the scene tree for the first time.
@@ -23,3 +24,6 @@ func handle_action(character: Player, delta):
 	
 func get_name():
 	return name
+	
+func get_texture():
+	return load("res://material/bad_asset_01.png")

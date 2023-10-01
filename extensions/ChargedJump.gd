@@ -30,3 +30,6 @@ func handle_drop(character: Player):
 	
 func get_name():
 	return name
+	
+func get_texture():
+	return load("res://material/Skillshards/ChargedJump-Skillshard.png")
