@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cuu78c5pmdktv"]
+
+[ext_resource type="Script" path="res://interactables/pipeentry.gd" id="1_doc3d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwr53"]
+size = Vector2(16.3826, 16.1094)
+
+[node name="pipeentry" type="Area2D"]
+script = ExtResource("1_doc3d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_wwr53")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

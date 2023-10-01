@@ -32,6 +32,7 @@ offset_bottom = 4.0
 text = "Beep Boop :D"
 
 [node name="speed" type="Label" parent="."]
+visible = false
 offset_left = -17.0
 offset_top = -40.0
 offset_right = 23.0
