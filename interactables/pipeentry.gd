@@ -13,13 +13,16 @@ func _process(delta):
 	pass
 
 
-func _on_area_entered(area):
+func _on_area_entered(entryObject: Skillshard):
 	if !received:
 		Target.received = true
-		area.set_position(Target.position)
-		pass # Replace with function body.
+		entryObject.hide()
+		await get_tree().create_timer(2.0).timeout
+		entryObject.show()
+		entryObject.set_position(Target.position)
 
 
-func _on_area_exited(area):
+
+func _on_area_exited(entryObject):
 	received = false
-	pass # Replace with function body.
+
