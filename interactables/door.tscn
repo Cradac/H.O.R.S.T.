@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://b34tmi8getgnu"]
 
 [ext_resource type="Texture2D" uid="uid://cb5j4o25ml3ig" path="res://material/Robot Platform Pack/door.png" id="1_c4qlw"]
-[ext_resource type="Script" path="res://door.gd" id="1_e23sw"]
+[ext_resource type="Script" path="res://interactables/door.gd" id="1_e23sw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dnn6w"]
 atlas = ExtResource("1_c4qlw")
@@ -60,6 +60,7 @@ atlas = ExtResource("1_c4qlw")
 region = Rect2(96, 0, 16, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hms2v"]
+resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
