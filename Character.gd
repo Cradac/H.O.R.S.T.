@@ -21,6 +21,7 @@ var in_jump = false
 var offset = 0
 var queued_vel = false
 var queued_velocity: Vector2
+var on_wall = false
 
 signal skill_inventory_change(extensions: Array[Extension])
 signal item_inventory_change(items: Array[Key])
@@ -138,6 +139,16 @@ func action():
 	if Input.is_action_just_pressed("drop_second"):
 		drop(1)
 		
+	if Input.is_action_just_pressed("Retry"):
+		get_tree().reload_current_scene()
+	
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
+	
+	if Input.is_action_just_pressed("menu"):
+		get_tree().change_scene_to_file("res://ui/MainMenu.tscn")
+	
+		
 func equip(extension: Extension) -> bool:
 	if (extensions.size() >= ram_size):
 		send_message.emit("Can't pick up '"+extension.get_name()+"'. Limited memory space.", 3)
@@ -173,4 +184,25 @@ func remove_item(item):
 	item_inventory_change.emit(items)
 	send_message.emit("Removed 'Key'.", 3)
 	
+
+
+
+func _on_area_2d_area_entered(area):
+	pass
+
+func _on_area_2d_area_exited(area):
+	pass
+
+func _on_area_2d_body_entered(body):
+	
+	if body != self:
+		on_wall = true
+
+func _on_area_2d_body_exited(body):
+	print("exit")
+	on_wall = false
+
+
+
+
 
