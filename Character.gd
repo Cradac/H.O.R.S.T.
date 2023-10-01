@@ -46,7 +46,7 @@ func move(delta):
 	
 	if x == 0 or abs(velocity.x) > VELOCITY_THRESHOLD:
 		if is_on_floor():
-			var friction = min((abs(velocity.x)/VELOCITY_THRESHOLD)*1500, BASE_FRICTION)
+			var friction = min((abs(velocity.x)/VELOCITY_THRESHOLD)*FRICTION_FACTOR, BASE_FRICTION)
 			apply_friction(friction * delta)
 			_animated_sprite.play("idle")
 		if abs(velocity.x) > VELOCITY_THRESHOLD:

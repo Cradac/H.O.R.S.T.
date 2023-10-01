@@ -3,7 +3,7 @@
 [ext_resource type="TileSet" uid="uid://deplnjhga82pr" path="res://tile_set.tres" id="1_8ptub"]
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="2_vtyji"]
 [ext_resource type="PackedScene" uid="uid://dbk2p6s2c1m8i" path="res://ui/IngameUI.tscn" id="3_403po"]
-[ext_resource type="PackedScene" path="res://interactables/finish_flag.tscn" id="4_rnhah"]
+[ext_resource type="PackedScene" uid="uid://0q2mmh6whuom" path="res://interactables/finish_flag.tscn" id="4_rnhah"]
 [ext_resource type="PackedScene" uid="uid://c5csxgrchsva" path="res://interactables/door.tscn" id="5_nc5yi"]
 [ext_resource type="PackedScene" uid="uid://dxknda3nwi188" path="res://interactables/key.tscn" id="6_8f4hl"]
 [ext_resource type="PackedScene" uid="uid://yp3ni767j7hn" path="res://interactables/Skillshard.tscn" id="8_10kbk"]
