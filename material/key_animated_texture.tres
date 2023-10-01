@@ -1,0 +1,29 @@
+[gd_resource type="AnimatedTexture" load_steps=9 format=3 uid="uid://0xriko1g0no2"]
+
+[ext_resource type="Texture2D" uid="uid://pbivaevvxt41" path="res://material/Robot Platform Pack/key_singles/key0.png" id="1_4b02g"]
+[ext_resource type="Texture2D" uid="uid://dnlkm7p18sweo" path="res://material/Robot Platform Pack/key_singles/key1.png" id="2_p7hau"]
+[ext_resource type="Texture2D" uid="uid://boev2164273dj" path="res://material/Robot Platform Pack/key_singles/key2.png" id="3_x3spu"]
+[ext_resource type="Texture2D" uid="uid://bmcyhsuw6eooy" path="res://material/Robot Platform Pack/key_singles/key3.png" id="4_fvo61"]
+[ext_resource type="Texture2D" uid="uid://dnv51080jr7ro" path="res://material/Robot Platform Pack/key_singles/key4.png" id="5_ck0v0"]
+[ext_resource type="Texture2D" uid="uid://cglowlf2dljuy" path="res://material/Robot Platform Pack/key_singles/key5.png" id="6_xw7t5"]
+[ext_resource type="Texture2D" uid="uid://cqbbs2besri4l" path="res://material/Robot Platform Pack/key_singles/key6.png" id="7_a8ual"]
+[ext_resource type="Texture2D" uid="uid://fiw0jlje1cdp" path="res://material/Robot Platform Pack/key_singles/key7.png" id="8_lbsqt"]
+
+[resource]
+frames = 8
+frame_0/texture = ExtResource("1_4b02g")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("2_p7hau")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("3_x3spu")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("4_fvo61")
+frame_3/duration = 0.2
+frame_4/texture = ExtResource("5_ck0v0")
+frame_4/duration = 0.2
+frame_5/texture = ExtResource("6_xw7t5")
+frame_5/duration = 0.2
+frame_6/texture = ExtResource("7_a8ual")
+frame_6/duration = 0.2
+frame_7/texture = ExtResource("8_lbsqt")
+frame_7/duration = 0.2

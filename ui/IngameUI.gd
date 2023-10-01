@@ -42,7 +42,7 @@ func _on_item_inventory_change(items):
 		textureRect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 		textureRect.stretch_mode = TextureRect.STRETCH_SCALE
 		
-		textureRect.texture = load("res://material/Robot Platform Pack/key.png")
+		textureRect.texture = load("res://material/key_animated_texture.tres")
 		item_inventory.add_child(textureRect)
 
 func clear_item_inventory():
