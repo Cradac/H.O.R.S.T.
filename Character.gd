@@ -6,8 +6,8 @@ class_name Player extends CharacterBody2D
 @export var FRICTION = 500
 @export var JUMP_FORCE = 250 
 @export var GRAVITY = 500
-@export var DOWN_GRAVITY = 500
-@export var POST_JUMP_GRAVITY = 500
+@export var DOWN_GRAVITY = 1500
+#@export var POST_JUMP_GRAVITY = 500
 @export var ram_size = 1
 @onready var _animated_sprite = $AnimatedSprite2D
 
@@ -88,7 +88,6 @@ func move(delta):
 	get_node("speed").text = str( round(velocity.x) ) + " | " + str( round(velocity.y))
 	move_and_slide()
 	if is_on_floor() and in_jump:
-		print("reset jump")
 		in_jump = false
 	
 	if is_on_floor() and velocity.y > 100:

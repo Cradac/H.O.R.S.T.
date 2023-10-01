@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6t2o03yya3w5"]
+
+[ext_resource type="Script" path="res://interactables/doublejumpitem.gd" id="1_i3p83"]
+[ext_resource type="Texture2D" uid="uid://cmtmrcmq85qs2" path="res://material/DoubleJump-Skillshard.png" id="1_jn8y2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_22g0u"]
+size = Vector2(10, 12)
+
+[node name="DoubleJumpItem" type="Area2D"]
+script = ExtResource("1_i3p83")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_22g0u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_jn8y2")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
