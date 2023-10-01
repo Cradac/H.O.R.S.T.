@@ -15,3 +15,6 @@ func handle_pickup(character: Player):
 	
 func get_name():
 	return "GenericExtension"
+	
+func get_texture():
+	return load("res://material/empty-Skillshard.png")
