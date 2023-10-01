@@ -1,7 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://d3qpotkps6k8g"]
+[gd_scene load_steps=13 format=3 uid="uid://dxknda3nwi188"]
 
+[ext_resource type="Script" path="res://interactables/key.gd" id="1_4qidv"]
 [ext_resource type="Texture2D" uid="uid://ffeeay1eebgb" path="res://material/Robot Platform Pack/key.png" id="1_aw6vy"]
-[ext_resource type="Script" path="res://interactables/key.gd" id="1_tl4lm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5r2qq"]
 radius = 6.0
@@ -71,7 +71,7 @@ animations = [{
 }]
 
 [node name="KeyItem" type="Area2D"]
-script = ExtResource("1_tl4lm")
+script = ExtResource("1_4qidv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_5r2qq")
