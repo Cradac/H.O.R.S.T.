@@ -38,10 +38,12 @@ func _on_item_inventory_change(items):
 	print(str(items))
 	clear_item_inventory()
 	for i in range(items.size()):
-		var label = Label.new()
-		#var extension = extensions[i]
-		label.text = str(i+1) + ": Key"
-		item_inventory.add_child(label)
+		var textureRect = TextureRect.new()
+		textureRect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
+		textureRect.stretch_mode = TextureRect.STRETCH_SCALE
+		
+		textureRect.texture = load("res://material/Robot Platform Pack/key.png")
+		item_inventory.add_child(textureRect)
 
 func clear_item_inventory():
 	for child in item_inventory.get_children():
