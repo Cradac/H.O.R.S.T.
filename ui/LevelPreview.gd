@@ -1,6 +1,6 @@
 class_name LevelPreview extends Control
 
-@export var target_scene: PackedScene
+@export var target_scene: String
 @export var level_screenshot: Texture2D
 @export var level_number: int
 
@@ -8,7 +8,7 @@ class_name LevelPreview extends Control
 @onready var label = $"Label"
 
 func _on_button_pressed():
-	get_tree().change_scene_to_packed(target_scene)
+	get_tree().change_scene_to_file(target_scene)
 	
 func _ready():
 	texture_rect.texture = level_screenshot
