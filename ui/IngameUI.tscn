@@ -92,6 +92,7 @@ offset_bottom = 32.0
 text = "Lorem Ipsum"
 
 [node name="Ui-overlay" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(480, 270)
 texture = ExtResource("2_x88rb")
 
