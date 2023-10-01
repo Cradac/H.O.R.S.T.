@@ -15,8 +15,10 @@ script = ExtResource("1_r626d")
 [node name="SkillInventoryUI" type="HBoxContainer" parent="."]
 z_index = 10
 layout_mode = 0
-offset_right = 113.0
-offset_bottom = 52.0
+offset_left = 43.0
+offset_top = 5.0
+offset_right = 143.0
+offset_bottom = 38.0
 
 [node name="ItemInventoryUI" type="HBoxContainer" parent="."]
 z_index = 10

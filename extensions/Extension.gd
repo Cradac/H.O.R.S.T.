@@ -17,4 +17,4 @@ func get_name():
 	return "GenericExtension"
 	
 func get_texture():
-	return load("res://material/Skillshards/empty-Skillshard.png")
+	return load("res://material/Skillshards/empty-Skillshard16x16.png")

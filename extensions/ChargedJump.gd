@@ -32,4 +32,4 @@ func get_name():
 	return name
 	
 func get_texture():
-	return load("res://material/Skillshards/ChargedJump-Skillshard.png")
+	return load("res://material/Skillshards/ChargedJump-Skillshard16x16.png")
