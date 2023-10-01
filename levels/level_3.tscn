@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://c1qy6v54oxdox"]
+[gd_scene load_steps=4 format=3 uid="uid://bkp1jfjoehso5"]
 
 [ext_resource type="TileSet" uid="uid://deplnjhga82pr" path="res://tile_set.tres" id="1_6lgy1"]
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="2_xnv7i"]
@@ -30,3 +30,4 @@ layer_2/tile_data = PackedInt32Array()
 position = Vector2(30, 514)
 
 [node name="IngameUI" parent="." instance=ExtResource("3_kra16")]
+level_name = "Level 3: <todo>"
