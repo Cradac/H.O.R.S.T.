@@ -32,6 +32,8 @@ func _physics_process(delta):
 	for extension in extensions:
 		extension.handle_action(self, delta)
 	move(delta)
+	if not is_on_floor():
+		_animated_sprite.play("jump")
 	
 
 @onready var axis = Vector2.ZERO
@@ -59,7 +61,8 @@ func move(delta):
 		if abs(velocity.x) > MAX_SPEED:
 			velocity.x = MAX_SPEED * sign(velocity.x)
 		# Animations
-		_animated_sprite.play("walk")
+		if is_on_floor():
+			_animated_sprite.play("walk")
 		if x > 0:
 			_animated_sprite.set_flip_h(false)
 		if x < 0:
