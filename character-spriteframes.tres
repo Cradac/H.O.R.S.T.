@@ -1,4 +1,4 @@
-[gd_resource type="SpriteFrames" load_steps=41 format=3 uid="uid://dtn4de6b5scun"]
+[gd_resource type="SpriteFrames" load_steps=41 format=3 uid="uid://tcaoq7a50k1g"]
 
 [ext_resource type="Texture2D" uid="uid://d21wwjsgrmp2j" path="res://material/Robot Platform Pack/OrangeRobot/Spritesheets/OrangeRobot_Attack1.png" id="1_i0ubw"]
 [ext_resource type="Texture2D" uid="uid://bcfc1q2yeke2x" path="res://material/Robot Platform Pack/OrangeRobot/Spritesheets/OrangeRobot_Attack2.png" id="2_hddra"]

@@ -63,3 +63,6 @@ position = Vector2(80, -46)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3_3"]
 position = Vector2(136, 619)
 shape = SubResource("RectangleShape2D_hgntb")
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2
