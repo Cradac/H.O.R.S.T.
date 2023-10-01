@@ -30,7 +30,7 @@ func setup_empty_skills():
 		textureRect.expand_mode = TextureRect.EXPAND_FIT_WIDTH
 		textureRect.stretch_mode = TextureRect.STRETCH_SCALE
 		
-		textureRect.texture = load("res://material/empty-Skillshard.png")
+		textureRect.texture = Extension.new().get_texture()
 		skill_inventory.add_child(textureRect)
 		
 
