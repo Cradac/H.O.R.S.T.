@@ -138,6 +138,16 @@ func action():
 	if Input.is_action_just_pressed("drop_second"):
 		drop(1)
 		
+	if Input.is_action_just_pressed("Retry"):
+		get_tree().reload_current_scene()
+	
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
+	
+	if Input.is_action_just_pressed("menu"):
+		get_tree().change_scene_to_file("res://ui/MainMenu.tscn")
+	
+		
 func equip(extension: Extension) -> bool:
 	if (extensions.size() >= ram_size):
 		send_message.emit("Can't pick up '"+extension.get_name()+"'. Limited memory space.", 3)
