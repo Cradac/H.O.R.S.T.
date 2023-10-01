@@ -2,8 +2,8 @@ class_name Dash extends Extension
 
 var used_dash = false
 var last_dashed = Time.get_ticks_msec()
-@export var FORCE = 400
-@export var delay = 3000
+@export var FORCE = 480
+@export var delay = 1500
 @export var name = "Dash"
 
 func handle_drop(character: Player):
@@ -21,7 +21,7 @@ func handle_action(character: Player, delta):
 			sign = -1
 		else:
 			sign = 1
-		character.queue_move(Vector2( sign * FORCE ,0))
+		character.queue_move(Vector2( sign * FORCE , -0.2 * FORCE))
 		used_dash = true
 		last_dashed = Time.get_ticks_msec()
 	else:

@@ -3,7 +3,9 @@ class_name Player extends CharacterBody2D
 @export var MAX_SPEED = 110
 @export var ACCELERATION = 200
 @export var AIR_BREAK = 100
-@export var FRICTION = 500
+@export var BASE_FRICTION = 500
+@export var VELOCITY_THRESHOLD = 200
+@export var FRICTION_FACTOR = 1500
 @export var JUMP_FORCE = 250 
 @export var GRAVITY = 500
 @export var DOWN_GRAVITY = 1500
@@ -42,11 +44,12 @@ func move(delta):
 	var x  = 0
 	x = int(Input.is_action_pressed("move_right")) - int(Input.is_action_pressed("move_left"))
 	
-	if x == 0 or abs(velocity.x) > 200:
+	if x == 0 or abs(velocity.x) > VELOCITY_THRESHOLD:
 		if is_on_floor():
-			apply_friction(FRICTION * delta)
+			var friction = min((abs(velocity.x)/VELOCITY_THRESHOLD)*1500, BASE_FRICTION)
+			apply_friction(friction * delta)
 			_animated_sprite.play("idle")
-		if abs(velocity.x) > 200:
+		if abs(velocity.x) > VELOCITY_THRESHOLD:
 			_animated_sprite.play("walk")
 	else:
 		if sign(x) == sign(prev_x):
@@ -96,9 +99,9 @@ func move(delta):
 	
 	prev_x = x
 
-func apply_friction(ammount):
-	if velocity.length() > ammount:
-		velocity -= velocity.normalized() * ammount
+func apply_friction(amount):
+	if velocity.length() > amount:
+		velocity -= velocity.normalized() * amount
 	else:
 		velocity = Vector2.ZERO
 		
