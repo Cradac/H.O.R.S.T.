@@ -21,6 +21,7 @@ var in_jump = false
 var offset = 0
 var queued_vel = false
 var queued_velocity: Vector2
+var on_wall = false
 
 signal skill_inventory_change(extensions: Array[Extension])
 signal item_inventory_change(items: Array[Key])
@@ -50,9 +51,9 @@ func move(delta):
 			var high_friction = (abs(velocity.x)/VELOCITY_THRESHOLD)*FRICTION_FACTOR
 			var friction = max(high_friction, BASE_FRICTION)
 			apply_friction(friction * delta)
-			_animated_sprite.play("idle")
-		if abs(velocity.x) > VELOCITY_THRESHOLD:
-			_animated_sprite.play("walk")
+			if not Input.is_action_pressed("jump"):
+				_animated_sprite.play("idle")
+				
 	else:
 		if sign(x) == sign(prev_x):
 			if is_on_floor():
@@ -69,7 +70,7 @@ func move(delta):
 		if abs(velocity.x) > MAX_SPEED:
 			velocity.x = MAX_SPEED * sign(velocity.x)
 		# Animations
-		if is_on_floor():
+		if is_on_floor() && not Input.is_action_pressed("jump"):
 			_animated_sprite.play("walk")
 		if x > 0:
 			_animated_sprite.set_flip_h(false)
@@ -183,4 +184,25 @@ func remove_item(item):
 	item_inventory_change.emit(items)
 	send_message.emit("Removed 'Key'.", 3)
 	
+
+
+
+func _on_area_2d_area_entered(area):
+	pass
+
+func _on_area_2d_area_exited(area):
+	pass
+
+func _on_area_2d_body_entered(body):
+	
+	if body != self:
+		on_wall = true
+
+func _on_area_2d_body_exited(body):
+	print("exit")
+	on_wall = false
+
+
+
+
 
