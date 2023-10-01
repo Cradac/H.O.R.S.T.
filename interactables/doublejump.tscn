@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://c6t2o03yya3w5"]
+[gd_scene load_steps=4 format=3 uid="uid://oyf8gbl0u8k2"]
 
 [ext_resource type="Script" path="res://interactables/doublejumpitem.gd" id="1_i3p83"]
-[ext_resource type="Texture2D" uid="uid://cmtmrcmq85qs2" path="res://material/DoubleJump-Skillshard.png" id="1_jn8y2"]
+[ext_resource type="Texture2D" uid="uid://cmtmrcmq85qs2" path="res://material/Skillshards/DoubleJump-Skillshard.png" id="2_tt43s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22g0u"]
 size = Vector2(10, 12)
@@ -13,6 +13,6 @@ script = ExtResource("1_i3p83")
 shape = SubResource("RectangleShape2D_22g0u")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_jn8y2")
+texture = ExtResource("2_tt43s")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
