@@ -1,6 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbk2p6s2c1m8i"]
+[gd_scene load_steps=8 format=3 uid="uid://dbk2p6s2c1m8i"]
 
 [ext_resource type="Script" path="res://ui/IngameUI.gd" id="1_r626d"]
+[ext_resource type="Texture2D" uid="uid://pk2dgjkjg2lt" path="res://material/UI-overlay.png" id="2_x88rb"]
+[ext_resource type="Texture2D" uid="uid://8wawwv5sgddd" path="res://material/ChargedJump-Skillshard.png" id="3_6py34"]
+[ext_resource type="Texture2D" uid="uid://cy75t3qkfrdcr" path="res://material/Dash-Skillshard.png" id="4_qun3l"]
+[ext_resource type="Texture2D" uid="uid://cmtmrcmq85qs2" path="res://material/DoubleJump-Skillshard.png" id="5_8227d"]
+[ext_resource type="Texture2D" uid="uid://bq0nn7xb6toli" path="res://material/empty-Skillshard.png" id="6_4nj8e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q72ka"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_6py34")
+}],
+"loop": false,
+"name": &"charged-jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_qun3l")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_8227d")
+}],
+"loop": false,
+"name": &"double-jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_4nj8e")
+}],
+"loop": false,
+"name": &"no-item",
+"speed": 5.0
+}]
 
 [node name="IngameUI" type="Control"]
 layout_mode = 3
@@ -12,25 +52,29 @@ grow_vertical = 2
 script = ExtResource("1_r626d")
 
 [node name="SkillInventoryUI" type="HBoxContainer" parent="."]
+z_index = 10
 layout_mode = 0
-offset_left = 9.0
-offset_top = 16.0
-offset_right = 392.0
-offset_bottom = 136.0
+offset_right = 383.0
+offset_bottom = 120.0
 
 [node name="ItemInventoryUI" type="HBoxContainer" parent="."]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
-offset_left = 565.0
-offset_top = 14.0
-offset_right = 942.0
-offset_bottom = 134.0
+offset_left = 583.0
+offset_right = 960.0
+offset_bottom = 120.0
 grow_horizontal = 2
 alignment = 2
 
 [node name="Label" type="Label" parent="."]
+z_index = 10
 layout_mode = 1
 anchors_preset = -1
+anchor_left = -0.127083
+anchor_top = 0.00925926
+anchor_right = -0.127083
+anchor_bottom = 0.00925926
 offset_left = 851.0
 offset_top = 6.0
 offset_right = 954.0
@@ -39,9 +83,19 @@ text = "Dolor Sit"
 metadata/_edit_use_anchors_ = true
 
 [node name="Label2" type="Label" parent="."]
+z_index = 10
 layout_mode = 1
-offset_left = 21.0
-offset_top = 21.0
-offset_right = 124.0
-offset_bottom = 47.0
+offset_left = 10.0
+offset_top = 6.0
+offset_right = 113.0
+offset_bottom = 32.0
 text = "Lorem Ipsum"
+
+[node name="Ui-overlay" type="Sprite2D" parent="."]
+position = Vector2(480, 270)
+texture = ExtResource("2_x88rb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(17, 43)
+sprite_frames = SubResource("SpriteFrames_q72ka")
+animation = &"no-item"

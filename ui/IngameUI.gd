@@ -3,11 +3,13 @@ extends Control
 @onready var skill_inventory = $SkillInventoryUI
 @onready var item_inventory = $ItemInventoryUI
 @onready var player: Player = $"../Character"
+@onready var _animated_sprite = $AnimatedSprite2D
 
 
 func _ready():
 	player.skill_inventory_change.connect(_on_skill_inventory_change)
 	player.item_inventory_change.connect(_on_item_inventory_change)
+	_animated_sprite.play("no-item")
 	pass
 
 
