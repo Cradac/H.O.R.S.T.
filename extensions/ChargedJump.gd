@@ -1,7 +1,7 @@
 class_name ChargedJump extends Extension
 
 var started_charging
-@export var charge_jump_force = 350.0 
+@export var charge_jump_force = 225.0 
 @export var charge_duration = 1000.0
 @export var name = "ChargedJump"
 
@@ -27,11 +27,11 @@ func handle_action(character: Player, delta):
 	if Input.is_action_just_pressed("jump") && character.is_on_floor():
 		#print("jump pressed")
 		started_charging = Time.get_ticks_msec()
-		
-	if Input.is_action_pressed("jump") && character.is_on_floor():
-		#print("jump pressed")
 		character._animated_sprite.play("landing")
 		
+	if Input.is_action_pressed("jump"):
+		character.velocity.x = 0
+
 func handle_drop(character: Player):
 	character.normal_jump = true
 	

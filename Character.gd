@@ -50,9 +50,9 @@ func move(delta):
 			var high_friction = (abs(velocity.x)/VELOCITY_THRESHOLD)*FRICTION_FACTOR
 			var friction = max(high_friction, BASE_FRICTION)
 			apply_friction(friction * delta)
-			_animated_sprite.play("idle")
-		if abs(velocity.x) > VELOCITY_THRESHOLD:
-			_animated_sprite.play("walk")
+			if not Input.is_action_pressed("jump"):
+				_animated_sprite.play("idle")
+				
 	else:
 		if sign(x) == sign(prev_x):
 			if is_on_floor():
@@ -69,7 +69,7 @@ func move(delta):
 		if abs(velocity.x) > MAX_SPEED:
 			velocity.x = MAX_SPEED * sign(velocity.x)
 		# Animations
-		if is_on_floor():
+		if is_on_floor() && not Input.is_action_pressed("jump"):
 			_animated_sprite.play("walk")
 		if x > 0:
 			_animated_sprite.set_flip_h(false)
