@@ -17,8 +17,8 @@ size = Vector2(6, 18)
 size = Vector2(6, 18)
 
 [node name="Character" type="CharacterBody2D"]
-collision_layer = 513
-collision_mask = 513
+collision_layer = 515
+collision_mask = 515
 script = ExtResource("1_chlop")
 
 [node name="BadAsset01" type="Sprite2D" parent="."]

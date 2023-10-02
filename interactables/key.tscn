@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://d0i64nj3yq5v3"]
+[gd_scene load_steps=14 format=3 uid="uid://dpcg21hbrccou"]
 
 [ext_resource type="Script" path="res://interactables/key.gd" id="1_4qidv"]
 [ext_resource type="Texture2D" uid="uid://ffeeay1eebgb" path="res://material/Robot Platform Pack/key.png" id="1_aw6vy"]

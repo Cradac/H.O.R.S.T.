@@ -1,8 +1,4 @@
-extends Node2D
-
-@export var door: Door
-@onready var _inactive_sprite = $StaticBody2D/inactive
-
+class_name Movable_Box extends Node2D
 
 
 # Called when the node enters the scene tree for the first time.
@@ -14,8 +10,5 @@ func _ready():
 func _process(delta):
 	pass
 
-func pressed():
-	_inactive_sprite.hide()
-
-func released():
-	_inactive_sprite.show()
+func _integrate_forces(state):
+	state.set_angular_volocity(-state.get_angular_volocity)
