@@ -18,6 +18,7 @@ func handle_action(character: Player, delta):
 			character._animated_sprite.set_flip_h(true)
 		character.velocity = Vector2(0,0)
 		character.queue_move(Vector2(character.bounce_dir * 250 ,-character.JUMP_FORCE))
+		character.get_node("JumpSound").play()
 		
 func can_use():
 	pass

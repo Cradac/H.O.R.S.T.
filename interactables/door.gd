@@ -20,6 +20,7 @@ func _process(delta):
 func open_door():
 	open = true
 	_animated_sprite.play("open")
+	get_node("AudioStreamPlayer2D").play()
 	await get_tree().create_timer(1.0).timeout
 	_static_body_2d.set_collision_layer(0)
 	

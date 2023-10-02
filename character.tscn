@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkxa5ykfmobjr"]
+[gd_scene load_steps=9 format=3 uid="uid://dkxa5ykfmobjr"]
 
 [ext_resource type="Script" path="res://Character.gd" id="1_chlop"]
 [ext_resource type="Texture2D" uid="uid://bk445moi3c7g6" path="res://material/bad_asset_01.png" id="2_co0eh"]
 [ext_resource type="SpriteFrames" uid="uid://dtn4de6b5scun" path="res://character-spriteframes.tres" id="3_ipixp"]
+[ext_resource type="AudioStream" uid="uid://54eadqlyw84u" path="res://sounds/270338__littlerobotsoundfactory__open_01.wav" id="4_n741d"]
+[ext_resource type="AudioStream" uid="uid://dbo5intkbrll0" path="res://sounds/270326__littlerobotsoundfactory__hit_01.wav" id="5_lmo5h"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lyxyb"]
 radius = 7.0
@@ -60,6 +62,13 @@ shape = SubResource("RectangleShape2D_4qlud")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollideRight"]
 position = Vector2(4, 2)
 shape = SubResource("RectangleShape2D_8hkba")
+
+[node name="DropSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_n741d")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_lmo5h")
+bus = &"Effects"
 
 [connection signal="body_entered" from="CollideLeft" to="." method="_on_collideLeft_body_entered"]
 [connection signal="body_exited" from="CollideLeft" to="." method="_on_collideLeft_body_exited"]

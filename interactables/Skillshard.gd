@@ -20,6 +20,7 @@ func _on_body_entered(body):
 		if (body as Player).equip(extension):
 			picked_up = true
 			visible = false
+			get_node("AudioStreamPlayer2D").play()
 
 func pick_skill(new_skill: Skill.Skills):
 		skill = new_skill

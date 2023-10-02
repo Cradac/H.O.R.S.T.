@@ -7,3 +7,4 @@ func _on_body_entered(body):
 		(body as Player).pickup(self)
 		picked_up = true
 		visible = false
+		get_node("AudioStreamPlayer2D").play()

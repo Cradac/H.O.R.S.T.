@@ -10,7 +10,7 @@ func handle_drop(character: Player):
 	pass
 
 func handle_action(character: Player, delta):
-	if (Input.is_action_just_pressed("action") or Input.is_action_just_pressed("action_2")) && can_use() :
+	if (Input.is_action_just_pressed("action") or Input.is_action_just_pressed("action_2") or Input.is_action_just_pressed("dash") ) && can_use() :
 		var sign = 0
 		if character._animated_sprite.flip_h:
 			sign = -1

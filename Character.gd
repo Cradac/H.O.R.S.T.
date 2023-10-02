@@ -119,7 +119,8 @@ func queue_jump(force):
 	queued_velocity.y +=  velocity.y * -1
 	queued_velocity.y -= force
 	_animated_sprite.play("jump")
-
+	get_node("JumpSound").play()
+	
 func may_i_jump():
 	#this is a place for doublejump logic and other funky jumpy stuff
 	if is_on_floor():
@@ -174,6 +175,7 @@ func drop(slot_index: int):
 		
 		extensions.remove_at(slot_index)
 		skill_inventory_change.emit(extensions)
+	get_node("DropSound").play()
 
 func pickup(item):
 	items.append(item)

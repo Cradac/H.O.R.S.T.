@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://yp3ni767j7hn"]
+[gd_scene load_steps=4 format=3 uid="uid://yp3ni767j7hn"]
 
 [ext_resource type="Script" path="res://interactables/Skillshard.gd" id="1_vhi37"]
+[ext_resource type="AudioStream" uid="uid://de40k16knwywf" path="res://sounds/270342__littlerobotsoundfactory__pickup_03.wav" id="2_cg70x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mcp6q"]
 size = Vector2(10.5, 12)
@@ -12,6 +13,10 @@ script = ExtResource("1_vhi37")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_mcp6q")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_cg70x")
+bus = &"Effects"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
