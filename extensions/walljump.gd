@@ -4,11 +4,12 @@ class_name WallJump extends Extension
 
 func handle_drop(character: Player):
 	#spawn item
-	var item = load("res://interactables/Skillshard.tscn").instantiate()
-	item.just_dropped = true
-	item.set_position(character.position + Vector2(0,5))
-	character.get_parent().add_child(item)
-	item.pick_skill(Skill.Skills.WALLJUMP)
+	#var item = load("res://interactables/Skillshard.tscn").instantiate()
+	#item.just_dropped = true
+	#item.set_position(character.position + Vector2(0,5))
+	#character.get_parent().add_child(item)
+	#item.pick_skill(Skill.Skills.WALLJUMP)
+	pass
 
 func handle_action(character: Player, delta):
 	if character.on_wall and Input.is_action_just_pressed("jump") and !character.is_on_floor():
@@ -32,3 +33,6 @@ func get_name():
 
 func get_texture():
 	return load("res://material/Skillshards/Walljump-Skillshard16x16.png")
+
+func get_skill():
+	return Skill.Skills.WALLJUMP

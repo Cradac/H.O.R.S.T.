@@ -1,9 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://g56i2id2b14x"]
+[gd_scene load_steps=12 format=3 uid="uid://g56i2id2b14x"]
 
 [ext_resource type="TileSet" uid="uid://deplnjhga82pr" path="res://tile_set.tres" id="1_4wgec"]
 [ext_resource type="PackedScene" uid="uid://870t7t8bk2cj" path="res://ui/LevelPreview.tscn" id="2_775pq"]
 [ext_resource type="Texture2D" uid="uid://bk65raiabi748" path="res://ui/level_screenshots/level1.png" id="4_yy34p"]
+[ext_resource type="Texture2D" uid="uid://dihagnyql4j1o" path="res://ui/level_screenshots/level3.png" id="5_35mw5"]
+[ext_resource type="PackedScene" uid="uid://bi7ppj01j2hxs" path="res://ui/tutorial.tscn" id="5_61lml"]
+[ext_resource type="Texture2D" uid="uid://bn7wo426tfuhs" path="res://ui/level_screenshots/level4.png" id="6_38bmf"]
 [ext_resource type="Texture2D" uid="uid://oiftm20bshfg" path="res://ui/level_screenshots/level2.png" id="6_xu3k5"]
+[ext_resource type="Texture2D" uid="uid://co5ioapsppnec" path="res://ui/level_screenshots/level5.png" id="7_c2bc4"]
 
 [sub_resource type="SystemFont" id="SystemFont_sm2dp"]
 
@@ -86,7 +90,7 @@ offset_right = 1631.0
 offset_bottom = 749.0
 scale = Vector2(0.2, 0.2)
 target_scene = "res://levels/level_3.tscn"
-level_screenshot = ExtResource("6_xu3k5")
+level_screenshot = ExtResource("5_35mw5")
 level_number = 3
 
 [node name="LevelPreview4" parent="." instance=ExtResource("2_775pq")]
@@ -96,5 +100,34 @@ offset_right = 1042.0
 offset_bottom = 892.0
 scale = Vector2(0.2, 0.2)
 target_scene = "res://levels/level_4.tscn"
-level_screenshot = ExtResource("6_xu3k5")
+level_screenshot = ExtResource("6_38bmf")
 level_number = 4
+
+[node name="LevelPreview5" parent="." instance=ExtResource("2_775pq")]
+offset_left = 395.0
+offset_top = 352.0
+offset_right = 1355.0
+offset_bottom = 892.0
+scale = Vector2(0.2, 0.2)
+target_scene = "res://levels/level_5.tscn"
+level_screenshot = ExtResource("7_c2bc4")
+level_number = 5
+
+[node name="LevelPreviewSECRET" parent="." instance=ExtResource("2_775pq")]
+visible = false
+offset_left = 672.0
+offset_top = 352.0
+offset_right = 1632.0
+offset_bottom = 892.0
+scale = Vector2(0.2, 0.2)
+target_scene = "res://levels/base_level.tscn"
+level_screenshot = ExtResource("6_xu3k5")
+
+[node name="tutorial" parent="." instance=ExtResource("5_61lml")]
+visible = false
+layout_mode = 1
+offset_left = 536.0
+offset_top = 40.0
+offset_right = 536.0
+offset_bottom = 40.0
+scale = Vector2(0.5, 0.5)

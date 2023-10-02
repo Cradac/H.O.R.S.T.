@@ -97,7 +97,7 @@ rotation = 3.14159
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_rib3k")
 autoplay = "default"
-frame_progress = 0.689246
+frame_progress = 0.874144
 
 [node name="RocketBoost_left" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
 z_index = -1
@@ -106,7 +106,7 @@ rotation = 3.14159
 scale = Vector2(-0.5, -0.5)
 sprite_frames = SubResource("SpriteFrames_rib3k")
 autoplay = "default"
-frame_progress = 0.622209
+frame_progress = 0.807108
 
 [node name="CollideLeft" type="Area2D" parent="."]
 

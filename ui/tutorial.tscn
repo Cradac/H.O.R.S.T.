@@ -12,11 +12,11 @@ grow_vertical = 2
 z_index = 4
 z_as_relative = false
 layout_mode = 0
-offset_left = 146.0
-offset_top = 97.0
-offset_right = 781.0
-offset_bottom = 175.0
-text = "This is H.O.R.S.T
+offset_left = 213.0
+offset_top = 55.0
+offset_right = 708.0
+offset_bottom = 136.0
+text = "This is H.O.R.S.T.
 Use the provided ability programms to navigate the level
 But keep in mind the memory space is limited"
 horizontal_alignment = 1
@@ -24,12 +24,16 @@ horizontal_alignment = 1
 [node name="controlls" type="Label" parent="."]
 z_index = 4
 layout_mode = 0
-offset_left = 334.0
-offset_top = 226.0
-offset_right = 584.0
-offset_bottom = 252.0
+offset_left = 213.0
+offset_top = 170.0
+offset_right = 709.0
+offset_bottom = 300.0
 text = "Navigate with A & D or Left Stick
-Jump with Space or Button"
+Jump with Space or Lower Button
+Use Abilities with F or Left Button
+Drop Abilities with 1&2 or D-Left & D-Right
+Restart With R or Upper Button
+"
 horizontal_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="."]

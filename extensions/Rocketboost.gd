@@ -43,4 +43,4 @@ func get_texture():
 	return load("res://material/Skillshards/Rocketboost-Skillshard16x16.png")
 
 func get_skill():
-	return Skill.Skills.DOUBLE_JUMP
+	return Skill.Skills.ROCKET_BOOST

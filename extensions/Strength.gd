@@ -6,11 +6,12 @@ var last_on_floor = Time.get_ticks_msec()
 @export var name = "Strength"
 
 func handle_drop(character: Player):
-	var item = load("res://interactables/Skillshard.tscn").instantiate()
-	item.just_dropped = true
-	item.set_position(character.position + Vector2(0,5))
-	character.get_parent().add_child(item)
-	item.pick_skill(Skill.Skills.STRENGTH)
+	#var item = load("res://interactables/Skillshard.tscn").instantiate()
+	#item.just_dropped = true
+	#item.set_position(character.position + Vector2(0,5))
+	#character.get_parent().add_child(item)
+	#item.pick_skill(Skill.Skills.STRENGTH)
+	pass
 
 func handle_action(character: Player, delta):
 	pass
