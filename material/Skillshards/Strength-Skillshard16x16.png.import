@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b1dpbyg3guepd"
-path="res://.godot/imported/ChargedJump-Skillshard32x32.png-cf28953697e41f918d5d1e4ff6f0fe13.ctex"
+uid="uid://cpmef0vv6eu25"
+path="res://.godot/imported/Strength-Skillshard16x16.png-9eca63f69a7a2e52c9496858005d5873.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://material/Skillshards/ChargedJump-Skillshard32x32.png"
-dest_files=["res://.godot/imported/ChargedJump-Skillshard32x32.png-cf28953697e41f918d5d1e4ff6f0fe13.ctex"]
+source_file="res://material/Skillshards/Strength-Skillshard16x16.png"
+dest_files=["res://.godot/imported/Strength-Skillshard16x16.png-9eca63f69a7a2e52c9496858005d5873.ctex"]
 
 [params]
 

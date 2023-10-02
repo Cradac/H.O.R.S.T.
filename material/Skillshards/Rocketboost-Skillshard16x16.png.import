@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b61uikm0kh2vo"
-path="res://.godot/imported/Dash-Skillshard32x32.png-23fae629bda1ed86056d8383f56a68c2.ctex"
+uid="uid://cod2m7fehdvfg"
+path="res://.godot/imported/Rocketboost-Skillshard16x16.png-4e7ddc3355980239789538ae80b5efa9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://material/Skillshards/Dash-Skillshard32x32.png"
-dest_files=["res://.godot/imported/Dash-Skillshard32x32.png-23fae629bda1ed86056d8383f56a68c2.ctex"]
+source_file="res://material/Skillshards/Rocketboost-Skillshard16x16.png"
+dest_files=["res://.godot/imported/Rocketboost-Skillshard16x16.png-4e7ddc3355980239789538ae80b5efa9.ctex"]
 
 [params]
 
