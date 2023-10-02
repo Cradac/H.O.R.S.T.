@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://bi7ppj01j2hxs"]
+
+[node name="tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="intro" type="Label" parent="."]
+z_index = 4
+z_as_relative = false
+layout_mode = 0
+offset_left = 146.0
+offset_top = 97.0
+offset_right = 781.0
+offset_bottom = 175.0
+text = "This is H.O.R.S.T
+Use the provided ability programms to navigate the level
+But keep in mind the memory space is limited"
+horizontal_alignment = 1
+
+[node name="controlls" type="Label" parent="."]
+z_index = 4
+layout_mode = 0
+offset_left = 334.0
+offset_top = 226.0
+offset_right = 584.0
+offset_bottom = 252.0
+text = "Navigate with A & D or Left Stick
+Jump with Space or Button"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = 1
+layout_mode = 0
+offset_left = 213.0
+offset_top = 53.0
+offset_right = 709.0
+offset_bottom = 301.0
+color = Color(0, 0, 0, 1)

@@ -1,12 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://bl11fhkdk43e"]
+[gd_scene load_steps=9 format=3 uid="uid://bl11fhkdk43e"]
 
 [ext_resource type="TileSet" uid="uid://deplnjhga82pr" path="res://tile_set.tres" id="1_8ptub"]
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="2_vtyji"]
 [ext_resource type="PackedScene" uid="uid://dbk2p6s2c1m8i" path="res://ui/IngameUI.tscn" id="3_403po"]
-[ext_resource type="PackedScene" uid="uid://0q2mmh6whuom" path="res://interactables/finish_flag.tscn" id="4_rnhah"]
+[ext_resource type="PackedScene" uid="uid://c0veqrx0uckkd" path="res://interactables/finish_flag.tscn" id="4_rnhah"]
 [ext_resource type="PackedScene" uid="uid://c5csxgrchsva" path="res://interactables/door.tscn" id="5_nc5yi"]
-[ext_resource type="PackedScene" uid="uid://dxknda3nwi188" path="res://interactables/key.tscn" id="6_8f4hl"]
+[ext_resource type="PackedScene" uid="uid://dpcg21hbrccou" path="res://interactables/key.tscn" id="6_8f4hl"]
 [ext_resource type="PackedScene" uid="uid://yp3ni767j7hn" path="res://interactables/Skillshard.tscn" id="8_10kbk"]
+[ext_resource type="PackedScene" uid="uid://bi7ppj01j2hxs" path="res://ui/tutorial.tscn" id="8_y5wbh"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -63,3 +64,6 @@ skill = 0
 [node name="finish_flag" parent="." instance=ExtResource("4_rnhah")]
 position = Vector2(940, 136)
 target_scene = "res://levels/level_2.tscn"
+
+[node name="tutorial" parent="." instance=ExtResource("8_y5wbh")]
+visible = false

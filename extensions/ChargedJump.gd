@@ -10,6 +10,7 @@ func handle_pickup(character: Player):
 
 func handle_action(character: Player, delta):
 	if Input.is_action_just_released("jump") && character.is_on_floor():
+		Input.stop_joy_vibration(0)
 		var time_charged = Time.get_ticks_msec() - started_charging
 		var boost = min((time_charged/charge_duration)*charge_jump_force, charge_jump_force)
 		print(str(time_charged) + " " + str(boost))
@@ -18,6 +19,7 @@ func handle_action(character: Player, delta):
 	
 	if Input.is_action_just_pressed("jump") && character.is_on_floor():
 		#print("jump pressed")
+		Input.start_joy_vibration(0,0.1,0.0,1)
 		started_charging = Time.get_ticks_msec()
 		character._animated_sprite.play("landing")
 		

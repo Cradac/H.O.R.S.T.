@@ -17,7 +17,8 @@ func handle_action(character: Player, delta):
 		else:
 			sign = 1
 		character.queue_move(Vector2( sign * FORCE , -0.2 * FORCE))
-		Input.start_joy_vibration(0,0.2,0,0.5)
+		character.get_node("DashSound").play()
+		Input.start_joy_vibration(0,0.2,0.3,0.5)
 		used_dash = true
 		last_dashed = Time.get_ticks_msec()
 	else:
