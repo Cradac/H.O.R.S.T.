@@ -8,7 +8,7 @@ func handle_drop(character: Player):
 	item.just_dropped = true
 	item.set_position(character.position + Vector2(0,5))
 	character.get_parent().add_child(item)
-	item.pick_skill(Skill.Skills.WallJump)
+	item.pick_skill(Skill.Skills.WALLJUMP)
 
 func handle_action(character: Player, delta):
 	if character.on_wall and Input.is_action_just_pressed("jump"):

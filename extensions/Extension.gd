@@ -20,7 +20,7 @@ func handle_pickup(character: Player):
 	# Handle setup of any effects
 	pass
 	
-func get_name():
+func get_name() -> String:
 	return "GenericExtension"
 	
 func get_texture():
@@ -36,8 +36,10 @@ static func get_extension(skill: Skill.Skills):
 			return Parachute
 		Skill.Skills.DASH:
 			return Dash
-		Skill.Skills.WallJump:
+		Skill.Skills.WALLJUMP:
 			return WallJump
+		Skill.Skills.STRENGTH:
+			return Strength
 		_:
 			return Extension
 	pass

@@ -94,6 +94,15 @@ func move(delta):
 	
 	get_node("speed").text = str( round(velocity.x) ) + " | " + str( round(velocity.y))
 	move_and_slide()
+	
+	# move rigid bodies
+	for ext in extensions:
+		if ext.get_name() == "Strength":
+			for col_idx in get_slide_collision_count():
+				var col := get_slide_collision(col_idx)
+				if col.get_collider() is RigidBody2D:
+					col.get_collider().apply_central_impulse(Vector2(col.get_normal().x, 0) * -35)
+	
 	if is_on_floor() and in_jump:
 		in_jump = false
 	
