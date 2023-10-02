@@ -12,6 +12,8 @@ class_name Player extends CharacterBody2D
 #@export var POST_JUMP_GRAVITY = 500
 @export var ram_size = 1
 @onready var _animated_sprite = $AnimatedSprite2D
+@onready var rocket_sprite_r = $AnimatedSprite2D/RocketBoost_right
+@onready var rocket_sprite_l = $AnimatedSprite2D/RocketBoost_left
 
 var extensions: Array[Extension]
 var items: Array[Key]
@@ -27,6 +29,10 @@ var bounce_dir = 0
 signal skill_inventory_change(extensions: Array[Extension])
 signal item_inventory_change(items: Array[Key])
 signal send_message(message: String, duration: int)
+
+func _ready():
+	rocket_sprite_r.visible = false
+	rocket_sprite_l.visible = false
 
 func _process(delta):
 	# action inputs

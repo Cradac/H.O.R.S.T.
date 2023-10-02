@@ -12,12 +12,20 @@ func handle_action(character: Player, delta):
 		if Input.is_action_just_pressed("action"):
 			used_boost = true
 			boost(character)
+			if character.velocity.x > 0:
+				character.rocket_sprite_r.visible = true
+			elif character.velocity.x < 0:
+				character.rocket_sprite_l.visible = true
 	else:
 		
 		if character.on_wall:
 			used_boost = false
+			character.rocket_sprite_r.visible = false
+			character.rocket_sprite_l.visible = false
+			
 		else:
 			boost(character)
+			
 
 func boost(character):
 	var sign = 0

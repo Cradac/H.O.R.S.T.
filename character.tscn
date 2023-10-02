@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dkxa5ykfmobjr"]
+[gd_scene load_steps=16 format=3 uid="uid://dkxa5ykfmobjr"]
 
 [ext_resource type="Script" path="res://Character.gd" id="1_chlop"]
 [ext_resource type="Texture2D" uid="uid://bk445moi3c7g6" path="res://material/bad_asset_01.png" id="2_co0eh"]
@@ -6,10 +6,47 @@
 [ext_resource type="AudioStream" uid="uid://54eadqlyw84u" path="res://sounds/270338__littlerobotsoundfactory__open_01.wav" id="4_n741d"]
 [ext_resource type="AudioStream" uid="uid://dbo5intkbrll0" path="res://sounds/270326__littlerobotsoundfactory__hit_01.wav" id="5_lmo5h"]
 [ext_resource type="AudioStream" uid="uid://ccpvymhacif1x" path="res://sounds/270336__littlerobotsoundfactory__shoot_02.wav" id="6_lrfs0"]
+[ext_resource type="Texture2D" uid="uid://boh78xclblq0g" path="res://material/fire-explosion-sprite.png" id="7_7ioxj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lyxyb"]
 radius = 7.0
 height = 22.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvrkj"]
+atlas = ExtResource("7_7ioxj")
+region = Rect2(352, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4flvs"]
+atlas = ExtResource("7_7ioxj")
+region = Rect2(384, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w2wl2"]
+atlas = ExtResource("7_7ioxj")
+region = Rect2(416, 160, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ysya"]
+atlas = ExtResource("7_7ioxj")
+region = Rect2(448, 160, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rib3k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvrkj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4flvs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w2wl2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ysya")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qlud"]
 size = Vector2(6, 18)
@@ -48,9 +85,28 @@ offset_right = 23.0
 offset_bottom = -17.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(-1, -3)
 sprite_frames = ExtResource("3_ipixp")
-animation = &"idle"
+animation = &"jump"
+
+[node name="RocketBoost_right" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+z_index = -1
+position = Vector2(-13, 7)
+rotation = 3.14159
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_rib3k")
+autoplay = "default"
+frame_progress = 0.689246
+
+[node name="RocketBoost_left" type="AnimatedSprite2D" parent="AnimatedSprite2D"]
+z_index = -1
+position = Vector2(15, 7)
+rotation = 3.14159
+scale = Vector2(-0.5, -0.5)
+sprite_frames = SubResource("SpriteFrames_rib3k")
+autoplay = "default"
+frame_progress = 0.622209
 
 [node name="CollideLeft" type="Area2D" parent="."]
 
