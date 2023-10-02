@@ -138,13 +138,7 @@ func may_i_jump():
 
 func action():
 	if Input.is_action_just_pressed("action"):
-		#equip(ChargedJump.new())
-		#equip(DoubleJump.new())
-		#equip(Parachute.new())
-		get_node("Label").visible = true
-	else:
-		get_node("Label").visible = false
-		
+		pass
 	if Input.is_action_just_pressed("drop_first"):
 		drop(0)
 	if Input.is_action_just_pressed("drop_second"):

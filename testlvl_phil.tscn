@@ -36,35 +36,35 @@ shape = SubResource("RectangleShape2D_hgntb")
 position = Vector2(37, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2_1"]
-position = Vector2(54, 506)
+position = Vector2(3, 505)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="wall2_2" type="StaticBody2D" parent="."]
 position = Vector2(37, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall2_2"]
-position = Vector2(54, 506)
+position = Vector2(3, 505)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="wall3_1" type="StaticBody2D" parent="."]
 position = Vector2(80, 0)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3_1"]
-position = Vector2(54, 506)
+position = Vector2(-57, 505)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="wall3_2" type="StaticBody2D" parent="."]
 position = Vector2(80, -23)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3_2"]
-position = Vector2(54, 506)
+position = Vector2(-57, 505)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="wall3_3" type="StaticBody2D" parent="."]
 position = Vector2(80, -46)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="wall3_3"]
-position = Vector2(54, 506)
+position = Vector2(-57, 505)
 shape = SubResource("RectangleShape2D_hgntb")
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -80,7 +80,7 @@ skill = 4
 
 [node name="Skillshard2" parent="." instance=ExtResource("2_466sv")]
 position = Vector2(272, 501)
-skill = 5
+skill = 7
 
 [node name="pipeentry" parent="." node_paths=PackedStringArray("Target") instance=ExtResource("4_x35ie")]
 position = Vector2(72, 509)

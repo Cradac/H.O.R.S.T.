@@ -40,6 +40,8 @@ static func get_extension(skill: Skill.Skills):
 			return WallJump
 		Skill.Skills.STRENGTH:
 			return Strength
+		Skill.Skills.ROCKET_BOOST:
+			return RocketBoost
 		_:
 			return Extension
 	pass
