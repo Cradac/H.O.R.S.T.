@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="2_xnv7i"]
 [ext_resource type="PackedScene" uid="uid://dbk2p6s2c1m8i" path="res://ui/IngameUI.tscn" id="3_kra16"]
 [ext_resource type="PackedScene" uid="uid://yp3ni767j7hn" path="res://interactables/Skillshard.tscn" id="4_w4dpf"]
-[ext_resource type="PackedScene" uid="uid://d0i64nj3yq5v3" path="res://interactables/key.tscn" id="5_lbmp3"]
+[ext_resource type="PackedScene" uid="uid://dpcg21hbrccou" path="res://interactables/key.tscn" id="5_lbmp3"]
 [ext_resource type="PackedScene" uid="uid://c0veqrx0uckkd" path="res://interactables/finish_flag.tscn" id="6_q0a3g"]
 [ext_resource type="PackedScene" uid="uid://c5csxgrchsva" path="res://interactables/door.tscn" id="7_j2omi"]
 [ext_resource type="PackedScene" uid="uid://cuu78c5pmdktv" path="res://interactables/pipeentry.tscn" id="8_qa3hk"]
@@ -47,7 +47,7 @@ skill = 1
 
 [node name="finish-flag" parent="." instance=ExtResource("6_q0a3g")]
 position = Vector2(37, 198)
-target_scene = "res://ui/MainMenu.tscn"
+target_scene = "res://levels/level_4.tscn"
 
 [node name="starting-door" parent="." instance=ExtResource("7_j2omi")]
 position = Vector2(17, 80)
