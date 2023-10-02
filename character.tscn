@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkxa5ykfmobjr"]
+[gd_scene load_steps=7 format=3 uid="uid://dkxa5ykfmobjr"]
 
 [ext_resource type="Script" path="res://Character.gd" id="1_chlop"]
 [ext_resource type="Texture2D" uid="uid://bk445moi3c7g6" path="res://material/bad_asset_01.png" id="2_co0eh"]
@@ -9,7 +9,10 @@ radius = 7.0
 height = 22.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4qlud"]
-size = Vector2(18, 18)
+size = Vector2(6, 18)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8hkba"]
+size = Vector2(6, 18)
 
 [node name="Character" type="CharacterBody2D"]
 collision_layer = 513
@@ -46,13 +49,19 @@ position = Vector2(-1, -3)
 sprite_frames = ExtResource("3_ipixp")
 animation = &"idle"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="CollideLeft" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-2, 2)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollideLeft"]
+position = Vector2(-8, 2)
 shape = SubResource("RectangleShape2D_4qlud")
 
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
+[node name="CollideRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollideRight"]
+position = Vector2(4, 2)
+shape = SubResource("RectangleShape2D_8hkba")
+
+[connection signal="body_entered" from="CollideLeft" to="." method="_on_collideLeft_body_entered"]
+[connection signal="body_exited" from="CollideLeft" to="." method="_on_collideLeft_body_exited"]
+[connection signal="body_entered" from="CollideRight" to="." method="_on_collideRight_body_entered"]
+[connection signal="body_exited" from="CollideRight" to="." method="_on_collideRight_body_exited"]

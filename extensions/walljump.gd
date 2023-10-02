@@ -11,13 +11,13 @@ func handle_drop(character: Player):
 	item.pick_skill(Skill.Skills.WallJump)
 
 func handle_action(character: Player, delta):
-	if character.on_wall and Input.is_action_just_pressed("jump"):
-		var sign = 0
-		if character._animated_sprite.flip_h:
-			sign = 1
+	if character.on_wall and Input.is_action_just_pressed("jump") and !character.is_on_floor():
+		if character.bounce_dir > 0:
+			character._animated_sprite.set_flip_h(false)
 		else:
-			sign = -1
-		character.queue_move(Vector2(sign * 250 ,-character.JUMP_FORCE))
+			character._animated_sprite.set_flip_h(true)
+		character.velocity = Vector2(0,0)
+		character.queue_move(Vector2(character.bounce_dir * 250 ,-character.JUMP_FORCE))
 		
 func can_use():
 	pass

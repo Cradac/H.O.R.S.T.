@@ -22,6 +22,7 @@ var offset = 0
 var queued_vel = false
 var queued_velocity: Vector2
 var on_wall = false
+var bounce_dir = 0
 
 signal skill_inventory_change(extensions: Array[Extension])
 signal item_inventory_change(items: Array[Key])
@@ -184,25 +185,20 @@ func remove_item(item):
 	item_inventory_change.emit(items)
 	send_message.emit("Removed 'Key'.", 3)
 	
-
-
-
-func _on_area_2d_area_entered(area):
-	pass
-
-func _on_area_2d_area_exited(area):
-	pass
-
-func _on_area_2d_body_entered(body):
-	
+func _on_collideLeft_body_entered(body):
 	if body != self:
 		on_wall = true
+		bounce_dir = 1
+		
 
-func _on_area_2d_body_exited(body):
-	print("exit")
+func _on_collideLeft_body_exited(body):
 	on_wall = false
 
+func _on_collideRight_body_entered(body):
+	if body != self:
+		on_wall = true
+		bounce_dir = -1
+		
 
-
-
-
+func _on_collideRight_body_exited(body):
+	on_wall = false
