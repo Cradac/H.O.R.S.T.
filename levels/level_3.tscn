@@ -11,6 +11,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_sk4w2"]
 font_size = 13
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="base_level" type="Node2D"]
 

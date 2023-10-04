@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dlgii7um5omto"]
+[gd_scene load_steps=10 format=3 uid="uid://dlgii7um5omto"]
 
 [ext_resource type="TileSet" uid="uid://deplnjhga82pr" path="res://tile_set.tres" id="1_k2v5s"]
 [ext_resource type="PackedScene" uid="uid://dkxa5ykfmobjr" path="res://character.tscn" id="2_fra3r"]
@@ -8,6 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://c0veqrx0uckkd" path="res://interactables/finish_flag.tscn" id="6_tihk5"]
 [ext_resource type="PackedScene" uid="uid://dpcg21hbrccou" path="res://interactables/key.tscn" id="7_lu5pr"]
 [ext_resource type="PackedScene" uid="uid://dgmmevr44g02a" path="res://interactables/movable_box.tscn" id="8_0vir4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sp0dv"]
+font_size = 13
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="base_level" type="Node2D"]
 
@@ -120,3 +125,14 @@ position = Vector2(385, 511)
 
 [node name="Node2D2" parent="." instance=ExtResource("5_08v6e")]
 position = Vector2(19, 512)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 418.0
+offset_top = 60.0
+offset_right = 514.0
+offset_bottom = 166.0
+text = "Your RAM size increased to 2.
+
+Good Luck!"
+label_settings = SubResource("LabelSettings_sp0dv")
+autowrap_mode = 2

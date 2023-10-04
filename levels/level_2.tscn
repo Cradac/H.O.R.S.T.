@@ -10,6 +10,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_iw04p"]
 font_size = 13
+outline_size = 2
+outline_color = Color(0, 0, 0, 1)
 
 [node name="level_2" type="Node2D"]
 
