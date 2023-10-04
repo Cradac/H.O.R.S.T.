@@ -5,7 +5,7 @@
 .vscode/
 
 # local resources
-.ressources/
+.resources/
 
 # builds
 bin/
