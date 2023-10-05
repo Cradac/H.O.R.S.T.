@@ -1,6 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://g56i2id2b14x"]
+[gd_scene load_steps=13 format=3 uid="uid://g56i2id2b14x"]
 
 [ext_resource type="TileSet" uid="uid://deplnjhga82pr" path="res://tile_set.tres" id="1_4wgec"]
+[ext_resource type="Script" path="res://ui/MainMenu.gd" id="1_16vlc"]
 [ext_resource type="PackedScene" uid="uid://870t7t8bk2cj" path="res://ui/LevelPreview.tscn" id="2_775pq"]
 [ext_resource type="Texture2D" uid="uid://bk65raiabi748" path="res://ui/level_screenshots/level1.png" id="4_yy34p"]
 [ext_resource type="Texture2D" uid="uid://dihagnyql4j1o" path="res://ui/level_screenshots/level3.png" id="5_35mw5"]
@@ -29,6 +30,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_16vlc")
 metadata/_edit_horizontal_guides_ = []
 
 [node name="TileMap" type="TileMap" parent="."]
@@ -131,3 +133,13 @@ offset_top = 40.0
 offset_right = 536.0
 offset_bottom = 40.0
 scale = Vector2(0.5, 0.5)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 435.0
+offset_right = 863.0
+offset_bottom = 457.0
+text = "EXIT"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
